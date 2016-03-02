@@ -61,7 +61,7 @@
 - (void)_startAnimation:(NSTimer *)timer {
    run(^{
        _currentPage += 1;
-       [_scrollView setContentOffset:CGPointMake(_scrollView.bounds.size.width *_currentPage,0)];
+       [_scrollView setContentOffset:CGPointMake(_scrollView.bounds.size.width *_currentPage,0) animated:YES];
    });
 }
 
@@ -91,8 +91,12 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _pageControl.currentPage = _scrollView.contentOffset.x / _scrollView.frame.size.width - 1;
+    });
     [self _startTimer];
 }
+
 
 #pragma mark - setup
 
@@ -129,6 +133,8 @@
     _interval = 3.0;
     [_imageViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     _imageViews = [NSMutableArray array];
+    
+    _currentPage = 1;
     
     [_scrollView removeFromSuperview];
     _scrollView = [[UIScrollView alloc] init];
