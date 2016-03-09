@@ -30,4 +30,14 @@ typedef NS_ENUM(NSInteger, WCHomeActionType){
 //    WCHomeActionTypeMore,
 //}WcHomeActionType;
 
+typedef NS_ENUM(NSInteger,WCErrorCode) {
+    WCRemindErrorCode = -10000,     //提醒错误
+    WCServiceErrorCode = -10001,    //服务器错误
+    WCLocalErrorCode = -10002,      //本地错误
+    WCNetworkErrorCode = -10003,    //网络错误
+    WCCrashErrorCode = -10004       //崩溃错误
+};
+
+
+
 #endif /* Enum_h */

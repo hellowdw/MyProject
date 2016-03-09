@@ -21,11 +21,48 @@
 
 @implementation WCBaseWebService
 
+#pragma mark - get post 请求
+
++ (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(id)parameters success:(WCAccessSuccess)success failure:(WCAccessFailure)failure {
+    NSURLSessionDataTask *dataTask = [[[self _shareService] manager] GET:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        [self debugWithResponseObject:responseObject];
+        success(task,responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(task,error);
+    }];
+    return dataTask;
+}
+
++ (NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters success:(WCAccessSuccess)success failure:(WCAccessFailure)failure {
+    NSURLSessionDataTask *dataTask = [[[self _shareService] manager] POST:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        [self debugWithResponseObject:responseObject];
+        success(task,responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(task,error);
+    }];
+    return dataTask;
+}
+
+#pragma mark - debug 打印数据
+
++ (void)debugWithResponseObject:(id)responseObject {
+#ifdef DEBUG
+    if ([responseObject isKindOfClass:[NSDictionary class]]) {
+        NSData *data = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];
+        NSString *dataString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        DLog(@"%@",dataString);
+    }
+#endif
+}
+
+#pragma mark - 请求头
+
 + (NSString *)baseURL {
     return WCBaseConnectorAddress;
 }
 
 #pragma mark - Init
+
 - (instancetype)init {
     if (self = [super init]) {
         _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:WCBaseConnectorAddress] sessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];

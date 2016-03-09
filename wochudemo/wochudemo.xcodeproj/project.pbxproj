@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D60328B1C8D52BC002E1665 /* WCBaseGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D60328A1C8D52BC002E1665 /* WCBaseGoods.m */; };
+		1D60328E1C8D74AE002E1665 /* WCVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D60328D1C8D74AE002E1665 /* WCVersion.m */; };
 		1D6207551C7182000069A2E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6207541C7182000069A2E5 /* main.m */; };
 		1D6207581C7182000069A2E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6207571C7182000069A2E5 /* AppDelegate.m */; };
 		1D6207601C7182000069A2E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D62075F1C7182000069A2E5 /* Assets.xcassets */; };
@@ -33,7 +35,11 @@
 		1DA8C5251C7AA2510031CB2F /* WCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C5241C7AA2510031CB2F /* WCThread.m */; };
 		1DA8C52B1C854A210031CB2F /* WCBaseWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C52A1C854A210031CB2F /* WCBaseWebService.m */; };
 		1DA8C5301C8566F30031CB2F /* WCBaseAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C52F1C8566F30031CB2F /* WCBaseAccess.m */; };
+		1DA8C5371C86D88E0031CB2F /* NSError+WC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C5361C86D88E0031CB2F /* NSError+WC.m */; };
+		1DA8C53A1C86E7D00031CB2F /* WCActivityAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C5391C86E7D00031CB2F /* WCActivityAccess.m */; };
+		1DA8C5C91C8D21370031CB2F /* WCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C5C81C8D21370031CB2F /* WCBaseModel.m */; };
 		1DCCB5011C744C8200579501 /* WCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCB5001C744C8200579501 /* WCBaseTableViewCell.m */; };
+		1DDF6B001C8D2F2800733FD8 /* WCAdvertising.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF6AFF1C8D2F2800733FD8 /* WCAdvertising.m */; };
 		A6F331D64A413FCB2C900A1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525322F63DA1AAE77EC41959 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +62,10 @@
 
 /* Begin PBXFileReference section */
 		1D12DCB01C7307A500B88480 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		1D6032891C8D52BC002E1665 /* WCBaseGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseGoods.h; sourceTree = "<group>"; };
+		1D60328A1C8D52BC002E1665 /* WCBaseGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseGoods.m; sourceTree = "<group>"; };
+		1D60328C1C8D74AE002E1665 /* WCVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCVersion.h; sourceTree = "<group>"; };
+		1D60328D1C8D74AE002E1665 /* WCVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCVersion.m; sourceTree = "<group>"; };
 		1D6207501C7182000069A2E5 /* wochudemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wochudemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6207541C7182000069A2E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1D6207561C7182000069A2E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,9 +120,17 @@
 		1DA8C52D1C854ACA0031CB2F /* VersionControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionControl.h; sourceTree = "<group>"; };
 		1DA8C52E1C8566F30031CB2F /* WCBaseAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseAccess.h; sourceTree = "<group>"; };
 		1DA8C52F1C8566F30031CB2F /* WCBaseAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseAccess.m; sourceTree = "<group>"; };
+		1DA8C5351C86D88E0031CB2F /* NSError+WC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+WC.h"; sourceTree = "<group>"; };
+		1DA8C5361C86D88E0031CB2F /* NSError+WC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+WC.m"; sourceTree = "<group>"; };
+		1DA8C5381C86E7D00031CB2F /* WCActivityAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCActivityAccess.h; sourceTree = "<group>"; };
+		1DA8C5391C86E7D00031CB2F /* WCActivityAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCActivityAccess.m; sourceTree = "<group>"; };
+		1DA8C5C71C8D21370031CB2F /* WCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseModel.h; sourceTree = "<group>"; };
+		1DA8C5C81C8D21370031CB2F /* WCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseModel.m; sourceTree = "<group>"; };
 		1DCCB4FF1C744C8200579501 /* WCBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseTableViewCell.h; sourceTree = "<group>"; };
 		1DCCB5001C744C8200579501 /* WCBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseTableViewCell.m; sourceTree = "<group>"; };
 		1DCCB5021C7454D000579501 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1DDF6AFE1C8D2F2800733FD8 /* WCAdvertising.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAdvertising.h; sourceTree = "<group>"; };
+		1DDF6AFF1C8D2F2800733FD8 /* WCAdvertising.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAdvertising.m; sourceTree = "<group>"; };
 		525322F63DA1AAE77EC41959 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		694C5E4869C2F7B13E0471ED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C3C22655B013257B8E9F44F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +271,8 @@
 		1D6207881C71B1A10069A2E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1DDF6AFE1C8D2F2800733FD8 /* WCAdvertising.h */,
+				1DDF6AFF1C8D2F2800733FD8 /* WCAdvertising.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +324,10 @@
 				1D62079C1C71C67C0069A2E5 /* WCObject.m */,
 				1DA8C5231C7AA2510031CB2F /* WCThread.h */,
 				1DA8C5241C7AA2510031CB2F /* WCThread.m */,
+				1DA8C5C71C8D21370031CB2F /* WCBaseModel.h */,
+				1DA8C5C81C8D21370031CB2F /* WCBaseModel.m */,
+				1D6032891C8D52BC002E1665 /* WCBaseGoods.h */,
+				1D60328A1C8D52BC002E1665 /* WCBaseGoods.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +394,7 @@
 		1DA8C5261C8549BD0031CB2F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1DA8C5311C86D6ED0031CB2F /* Category */,
 				1DA8C5271C8549BD0031CB2F /* APPHelp */,
 				1DA8C5281C8549BD0031CB2F /* WebAccess */,
 			);
@@ -379,6 +404,8 @@
 		1DA8C5271C8549BD0031CB2F /* APPHelp */ = {
 			isa = PBXGroup;
 			children = (
+				1D60328C1C8D74AE002E1665 /* WCVersion.h */,
+				1D60328D1C8D74AE002E1665 /* WCVersion.m */,
 			);
 			path = APPHelp;
 			sourceTree = "<group>";
@@ -386,12 +413,23 @@
 		1DA8C5281C8549BD0031CB2F /* WebAccess */ = {
 			isa = PBXGroup;
 			children = (
-				1DA8C5291C854A210031CB2F /* WCBaseWebService.h */,
-				1DA8C52A1C854A210031CB2F /* WCBaseWebService.m */,
+				1DA8C5381C86E7D00031CB2F /* WCActivityAccess.h */,
+				1DA8C5391C86E7D00031CB2F /* WCActivityAccess.m */,
 				1DA8C52E1C8566F30031CB2F /* WCBaseAccess.h */,
 				1DA8C52F1C8566F30031CB2F /* WCBaseAccess.m */,
+				1DA8C5291C854A210031CB2F /* WCBaseWebService.h */,
+				1DA8C52A1C854A210031CB2F /* WCBaseWebService.m */,
 			);
 			path = WebAccess;
+			sourceTree = "<group>";
+		};
+		1DA8C5311C86D6ED0031CB2F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1DA8C5351C86D88E0031CB2F /* NSError+WC.h */,
+				1DA8C5361C86D88E0031CB2F /* NSError+WC.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		1DCCB4FE1C74488100579501 /* Cell */ = {
@@ -601,21 +639,27 @@
 				1DA8C50E1C7479C10031CB2F /* WCGoodsActivityProgram1Cell.m in Sources */,
 				1DA8C5181C75956F0031CB2F /* WCHomeAdvertView.m in Sources */,
 				1DA8C50B1C7479750031CB2F /* WCBaseActivityProgramCell.m in Sources */,
+				1DA8C5371C86D88E0031CB2F /* NSError+WC.m in Sources */,
 				1D62079A1C71B8720069A2E5 /* WCBaseNavigationViewController.m in Sources */,
 				1D6207941C71B4710069A2E5 /* WCBaseViewController.m in Sources */,
 				1D6207A71C71CF700069A2E5 /* WCHomeHeaderView.m in Sources */,
 				1DA8C52B1C854A210031CB2F /* WCBaseWebService.m in Sources */,
 				1DCCB5011C744C8200579501 /* WCBaseTableViewCell.m in Sources */,
+				1D60328E1C8D74AE002E1665 /* WCVersion.m in Sources */,
+				1DA8C5C91C8D21370031CB2F /* WCBaseModel.m in Sources */,
 				1D6207A01C71C6B50069A2E5 /* WCBaseViewModel.m in Sources */,
 				1D6207A31C71C7520069A2E5 /* WCHomeViewModel.m in Sources */,
 				1D62079D1C71C67C0069A2E5 /* WCObject.m in Sources */,
 				1DA8C5121C75623A0031CB2F /* WCSeparateView.m in Sources */,
+				1DA8C53A1C86E7D00031CB2F /* WCActivityAccess.m in Sources */,
 				1DA8C5221C76F0C00031CB2F /* WCImageView.m in Sources */,
 				1D6207AA1C71CF8F0069A2E5 /* WCHomeTitleView.m in Sources */,
 				1DA8C5151C7595270031CB2F /* WCHomeActionView.m in Sources */,
 				1D6207581C7182000069A2E5 /* AppDelegate.m in Sources */,
 				1DA8C51B1C7595B50031CB2F /* WCHomeNewsView.m in Sources */,
 				1DA8C51E1C75A4CF0031CB2F /* WCButton.m in Sources */,
+				1DDF6B001C8D2F2800733FD8 /* WCAdvertising.m in Sources */,
+				1D60328B1C8D52BC002E1665 /* WCBaseGoods.m in Sources */,
 				1D6207551C7182000069A2E5 /* main.m in Sources */,
 				1D6207971C71B5040069A2E5 /* WCHomeViewController.m in Sources */,
 				1DA8C5251C7AA2510031CB2F /* WCThread.m in Sources */,
