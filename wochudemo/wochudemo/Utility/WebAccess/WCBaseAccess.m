@@ -94,7 +94,7 @@ static NSString *__tempConfigure = @"client/v1/";
             part = [NSString stringWithFormat:@"\"%@\":%@",encodeKey,encodeValue];
         }
         
-        [parts addObject:parts];
+        [parts addObject:part];
     }
     
     [assembleString appendString:@"{"];
@@ -105,7 +105,7 @@ static NSString *__tempConfigure = @"client/v1/";
         }
     }
     [assembleString appendString:@"}"];
-    NSString *tempKey = [assembleString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *tempKey = [assembleKey stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return @{tempKey:assembleString};
 }
 

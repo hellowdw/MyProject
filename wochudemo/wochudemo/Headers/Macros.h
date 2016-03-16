@@ -33,6 +33,7 @@
 
 #define WCHomeAdPageColor      [UIColor colorWithRed:200/255.0f green:200/255.0f blue:200/255.0f alpha:1.0f]
 #define WCHomeAdCurrentPageColor      [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f]
+#define RGB(R, G, B) [UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:1.0f]
 
 
 

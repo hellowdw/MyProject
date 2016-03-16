@@ -10,6 +10,10 @@
 
 @interface WCBaseAccess : WCBaseWebService
 
+/**
+ *  拼接字符串
+ */
++ (NSString *)assembleURLString:(NSString *)URLString;
 
 /**
  *  内部检测数据是否有错， 对WCBaseWebService的又一次封装
@@ -23,5 +27,9 @@
 + (NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters action:(void(^)(NSURLSessionDataTask *task,id responeObject,NSError *error))action;
 
 
+/**
+ *  把字典转化成json字符串
+ */
++ (NSDictionary *)assembleParameterWithKey:(NSString *)assembleKey parameters:(NSDictionary *)parameters;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "WCHomeAdvertView.h"
 #import "WCImageView.h"
+#import "WCAdvertising.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface WCHomeAdvertView ()<UIScrollViewDelegate>
 
@@ -35,18 +37,76 @@
 }
 
 - (void)setAdvertisings:(NSArray *)ads {
-    for (NSInteger idx = 0; idx < 3 +2; idx ++) {
+    if (ads.count) {
+        NSMutableArray *picUrl = [NSMutableArray array];
+        for (WCAdvertising *advert in ads) {
+            if (advert.picUrl.length) {
+                [picUrl addObject:advert.picUrl];
+            }
+        }
+        [self _setAvertImagesOrUrls:picUrl];
+    }
+}
+
+- (void)_setAvertImagesOrUrls:(NSArray *)picUrls {
+    if (!picUrls.count) {
+        return;
+    }
+    
+    // 每次刷新，都会调用，所以需要删除
+    [_imageViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_imageViews removeAllObjects];
+    [self _stopTimer];
+    
+    for (NSInteger idx = 0; idx < picUrls.count + 2; idx ++) {
         WCImageView *imageView = [[WCImageView alloc] init];
+        imageView.userInteractionEnabled = YES;
+        [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_clickImageView:)]];
+        if (idx == 0) {
+            [self _imageView:imageView loadImage:[picUrls  lastObject]];
+            imageView.tag = picUrls.count;
+        } else if (idx == picUrls.count + 1) {
+            [self _imageView:imageView loadImage:[picUrls firstObject]];
+            imageView.tag = 0;
+        } else {
+            [self _imageView:imageView loadImage:picUrls[idx - 1]];
+            imageView.tag = idx - 1;
+        }
+        
+        
         [_scrollView addSubview:imageView];
         [_imageViews addObject:imageView];
     }
     _pageControl.numberOfPages = _imageViews.count - 2;
     _pageControl.currentPage = 0;
     [self _setupFrame];
+    
+    if (picUrls.count < 2) {
+        return;
+    }
     [self _startTimer];
 }
 
+- (void)_imageView:(WCImageView *)imageView loadImage:(id)image {
+    [imageView sd_cancelCurrentImageLoad];
+    if ([image isKindOfClass:[NSString class]]) {
+        NSString *imageUrlString = image;
+        [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[WCAPPGlobal placeholderImage]];
+    } else if ([image isKindOfClass:[NSURL class]]) {
+        NSURL *imageURL = image;
+        [imageView sd_setImageWithURL:imageURL placeholderImage:[WCAPPGlobal placeholderImage]];
+    } else if ([image isKindOfClass:[UIImage class]]) {
+        imageView.image = image;
+    } else {
+        WCAssert (0 && @"image错误");
+    }
+}
+
 #pragma mark - action
+
+- (void)_clickImageView:(UITapGestureRecognizer *)tap {
+    
+}
 
 - (void)startAnimation {
     [self _startTimer];
@@ -123,7 +183,6 @@
     
     for (NSInteger idx = 0; idx < _imageViews.count; idx ++) {
         UIImageView *imageView = _imageViews[idx];
-        imageView.backgroundColor = [UIColor colorWithRed:(arc4random()%256/256.0) green:(arc4random()%256/256.0) blue:(arc4random()%256/256.0) alpha:1];
         imageView.frame = CGRectMake(idx * self.bounds.size.width, 0, _scrollView.bounds.size.width, _scrollView.bounds.size.height);
     }
     

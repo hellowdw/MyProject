@@ -42,7 +42,7 @@
     _sinceID = 0;
     _maxID = 0;
     _page = 1;
-    
+    [self loadMore:1 action:action];
 }
 
 - (void)loadMore:(NSInteger)page action:(WCDoneAction)action {

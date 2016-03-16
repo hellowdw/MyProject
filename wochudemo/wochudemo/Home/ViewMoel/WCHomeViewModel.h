@@ -10,4 +10,8 @@
 
 @interface WCHomeViewModel : WCBaseViewModel
 
+@property (strong,nonatomic) NSArray *goods;
+
+@property (strong,nonatomic) NSArray *advertisings;
+
 @end

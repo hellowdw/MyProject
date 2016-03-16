@@ -10,16 +10,15 @@
 
 @implementation WCBaseModel
 
-+ (NSDictionary *)replacedKeyFromPropertyName {
-    return @{@"ID":@"id"};
-}
-
-
 - (instancetype)initWithID:(int64_t)ID {
     if (self = [super init]) {
         _ID = ID;
     }
     return self;
+}
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{@"ID":@"id"};
 }
 
 @end

@@ -11,6 +11,8 @@
 #import "WCHomeHeaderView.h"
 #import "WCHomeTitleView.h"
 #import "WCGoodsActivityProgram1Cell.h"
+#import <MJRefresh/MJRefresh.h>
+#import "WCGoodsCell.h"
 
 static NSString *__goodsCellIdentifier = @"WCGoodsCell";
 static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
@@ -62,34 +64,77 @@ static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
 }
 
 - (void)_setupData {
-    [_mHomeHeaderView renderAdverView:nil];
+    self.mTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self _refresh];
+    }];
+    
+    
+    [self.mTableView.header beginRefreshing];
+
+}
+
+- (void)_refresh {
+    __weak typeof(self) weakSelf = self;
+    [weakSelf.mViewModel refresh:^(NSError *error) {
+        run(^{
+            [weakSelf.mTableView.header endRefreshing];
+            [weakSelf.mTableView reloadData];
+
+            if (error) {
+                //[
+            } else {
+            [weakSelf.mHomeHeaderView renderAdverView:weakSelf.mViewModel.advertisings];
+            }
+        });
+    }];
+    
+    
+    
+    
+    
     [_mHomeHeaderView startAnimation];
+    
+
 }
 
 
 #pragma  TableViewDelegate&DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    __weak typeof(self) weakSelf = self;
+    switch (indexPath.row) {
+        case 0:{
+            WCGoodsCell * cell = [tableView dequeueReusableCellWithIdentifier:__goodsCellIdentifier forIndexPath:indexPath];
+            [WCGoodsCell renderCell:cell tableView:tableView indexPath:indexPath element:_mViewModel.goods];
+            return cell;
+        }
+            break;
+            
+        default:
+            break;
+    }
     
-    WCGoodsActivityProgram1Cell *cell = [tableView dequeueReusableCellWithIdentifier:__program1CellIdentifier forIndexPath:indexPath];
+//    WCGoodsActivityProgram1Cell *cell = [tableView dequeueReusableCellWithIdentifier:__program1CellIdentifier forIndexPath:indexPath];
     
     
-    return cell;
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
-//        case 0:
-//            return 44;
-//            break;
+        case 0:{
+            return [WCGoodsCell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+        }
+            break;
         default:
             return [self _actsCellWithTableView:tableView heightForRowIndexPath:indexPath];
             break;
     }
+    return 44;
 }
 
 - (CGFloat)_actsCellWithTableView:(UITableView *)tableView heightForRowIndexPath:(NSIndexPath *)indexPath {

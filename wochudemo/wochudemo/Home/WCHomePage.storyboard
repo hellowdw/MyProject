@@ -147,8 +147,41 @@
                                     </connections>
                                 </view>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WCGoodsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsCell" rowHeight="165" id="hMR-FH-6oO" customClass="WCGoodsCell">
+                                        <rect key="frame" x="0.0" y="412" width="600" height="165"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hMR-FH-6oO" id="QBb-MQ-9Ba">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="164.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjQ-1a-xLH">
+                                                    <rect key="frame" x="8" y="8" width="78" height="18"/>
+                                                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVW-Fk-nc6">
+                                                    <rect key="frame" x="0.0" y="34" width="600" height="130.5"/>
+                                                </scrollView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RjQ-1a-xLH" firstAttribute="top" secondItem="QBb-MQ-9Ba" secondAttribute="top" constant="8" id="3YQ-Ft-6bc"/>
+                                                <constraint firstItem="wVW-Fk-nc6" firstAttribute="leading" secondItem="QBb-MQ-9Ba" secondAttribute="leading" id="3fx-mN-jnz"/>
+                                                <constraint firstAttribute="trailing" secondItem="RjQ-1a-xLH" secondAttribute="trailing" constant="514" id="Lj5-LS-ebL"/>
+                                                <constraint firstItem="RjQ-1a-xLH" firstAttribute="leading" secondItem="QBb-MQ-9Ba" secondAttribute="leading" constant="8" id="hhc-Za-Jav"/>
+                                                <constraint firstItem="wVW-Fk-nc6" firstAttribute="top" secondItem="RjQ-1a-xLH" secondAttribute="bottom" constant="8" id="pEm-AT-v8n"/>
+                                                <constraint firstAttribute="bottom" secondItem="wVW-Fk-nc6" secondAttribute="bottom" id="v8a-NI-9Hb"/>
+                                                <constraint firstAttribute="trailing" secondItem="wVW-Fk-nc6" secondAttribute="trailing" id="xUS-tq-Ne4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goodsScrollView" destination="wVW-Fk-nc6" id="i8d-cP-iYn"/>
+                                            <outlet property="titleLabel" destination="RjQ-1a-xLH" id="PvJ-gd-WKg"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsActivityProgram1Cell" rowHeight="88" id="Yu1-Xu-PVf" customClass="WCGoodsActivityProgram1Cell">
-                                        <rect key="frame" x="0.0" y="412" width="600" height="88"/>
+                                        <rect key="frame" x="0.0" y="577" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yu1-Xu-PVf" id="RTW-Th-tGC">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
