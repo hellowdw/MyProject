@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+
 @property (weak, nonatomic) IBOutlet UIScrollView *goodsScrollView;
 
 @property (strong, nonatomic) NSMutableArray *goodsViewArray;
@@ -30,11 +31,20 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        _titleLabel.text = @"爆款商品";
         _goodsViewArray = [NSMutableArray array];
+        //这个时候cell才被加载，cell的子视图还没有加载
+        //_titleLabel.text = @"爆款商品";
     }
     return self;
 }
+
+- (void)awakeFromNib {
+    //这个时候cell的子视图才被加载
+    _titleLabel.text = @"爆款商品";
+    
+}
+
+
 
 + (instancetype)renderCell:(WCGoodsCell *)cell tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath element:(id)element{
     cell.element = element;
@@ -85,8 +95,6 @@
     }
     _goodsScrollView.contentSize = CGSizeMake(goodsArray.count * W + (goodsArray.count + 1) * WCGoodsMargin, 0);
 }
-
-
 
 
 @end

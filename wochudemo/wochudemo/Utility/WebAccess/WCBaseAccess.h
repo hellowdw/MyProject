@@ -8,6 +8,8 @@
 
 #import "WCBaseWebService.h"
 
+typedef void(^WCCommonAction)(NSArray *array,NSError *error);
+
 @interface WCBaseAccess : WCBaseWebService
 
 /**

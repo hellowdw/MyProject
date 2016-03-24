@@ -17,4 +17,9 @@ typedef void(^WCHomeLayoutAction)(NSArray *ads,NSArray *goods,NSError *error);
  */
 + (void)getHomeLayoutWithPage:(NSInteger)page count:(NSInteger)count action:(WCHomeLayoutAction)action;
 
+/**
+ *  获取商品活动
+ */
++ (void)getGoodsActsAction:(WCCommonAction)action;
+
 @end

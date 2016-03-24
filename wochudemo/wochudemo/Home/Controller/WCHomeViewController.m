@@ -11,11 +11,14 @@
 #import "WCHomeHeaderView.h"
 #import "WCHomeTitleView.h"
 #import "WCGoodsActivityProgram1Cell.h"
+#import "WCGoodsActivityProgram2Cell.h"
 #import <MJRefresh/MJRefresh.h>
 #import "WCGoodsCell.h"
+#import "WCGoodsActs.h"
 
 static NSString *__goodsCellIdentifier = @"WCGoodsCell";
 static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
+static NSString *__program2CellIdentifier = @"WCGoodsActivityProgram2Cell";
 
 
 
@@ -101,13 +104,13 @@ static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
 #pragma  TableViewDelegate&DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [_mViewModel numberOfItemsOrRowsInSction:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self) weakSelf = self;
     switch (indexPath.row) {
-        case 0:{
+        case WCHomeCellTypeBombGoods:{
             WCGoodsCell * cell = [tableView dequeueReusableCellWithIdentifier:__goodsCellIdentifier forIndexPath:indexPath];
             [WCGoodsCell renderCell:cell tableView:tableView indexPath:indexPath element:_mViewModel.goods];
             return cell;
@@ -115,6 +118,7 @@ static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
             break;
             
         default:
+            return  [self _actsCellWithTableView:tableView cellForRowAtIndexPath:indexPath];
             break;
     }
     
@@ -124,9 +128,33 @@ static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
     return nil;
 }
 
+- (UITableViewCell *)_actsCellWithTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indesPath {
+    
+    WCGoodsActs *acts = [_mViewModel elementForIndexPath:indesPath];
+    WCBaseActivityProgramCell *cell = nil;
+    switch (acts.templateType) {
+        case WCHomeCellTypeOneImageView: {
+            cell = [tableView dequeueReusableCellWithIdentifier:__program1CellIdentifier];
+            [WCGoodsActivityProgram1Cell renderCell:cell tableView:tableView indexPath:indesPath element:acts];
+        }
+            break;
+        case WCHomeCellTypeTwoImageView: {
+            cell = [tableView dequeueReusableCellWithIdentifier:__program2CellIdentifier];
+            [WCGoodsActivityProgram2Cell renderCell:cell tableView:tableView indexPath:indesPath element:acts];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    return cell;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
-        case 0:{
+        case WCHomeCellTypeBombGoods:{
             return [WCGoodsCell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
         }
             break;

@@ -38,6 +38,12 @@ typedef NS_ENUM(NSInteger,WCErrorCode) {
     WCCrashErrorCode = -10004       //崩溃错误
 };
 
+typedef NS_ENUM(NSInteger,WCHomeCellType) {
+    WCHomeCellTypeBombGoods = 0,          //第一个cell放的是爆款商品
+    WCHomeCellTypeOneImageView = 1,       //只有一个图片的cell
+    WCHomeCellTypeTwoImageView = 2,       //有两个图片的cell
+};
+
 
 
 #endif /* Enum_h */

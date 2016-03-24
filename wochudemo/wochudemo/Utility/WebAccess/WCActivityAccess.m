@@ -10,9 +10,13 @@
 #import "WCVersion.h"
 #import "WCAdvertising.h"
 #import "WCBaseGoods.h"
+#import "WCGoodsActs.h"
 
 @implementation WCActivityAccess
 
+/**
+ *  首页的广告栏和爆款商品
+ */
 + (void)getHomeLayoutWithPage:(NSInteger)page count:(NSInteger)count action:(WCHomeLayoutAction)action {
     NSDictionary *parameter = @{@"version":[WCVersion appVersion],@"source":@"I"};
     
@@ -29,6 +33,22 @@
             NSArray *goods = [WCBaseGoods mj_objectArrayWithKeyValuesArray:responeObject[@"data"][@"recommendedEntries"]];
             
             return action(ads,goods,nil);
+        }
+    }];
+}
+
+/**
+ *  获取商品活动
+ */
++ (void)getGoodsActsAction:(WCCommonAction)action {
+    NSDictionary *dict = @{@"version":[WCVersion appVersion],@"source":@"I"};
+    NSDictionary *parameters = [self assembleParameterWithKey:@"parameters" parameters:dict];
+    [self GET:[self assembleURLString:@"acts"] parameters:parameters action:^(NSURLSessionDataTask *task, id responeObject, NSError *error) {
+        if (error) {
+            return action (nil,error);
+        } else {
+            NSArray *acts = [WCGoodsActs mj_objectArrayWithKeyValuesArray:responeObject[@"data"][@"acts"]];
+            return action(acts,nil);
         }
     }];
 }
