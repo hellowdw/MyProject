@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) UIColor *orangeColor;
 @property (strong, nonatomic) UIColor *grayColor;
+@property (strong, nonatomic) UIColor *greenColor;
 
 
 @end
@@ -35,6 +36,7 @@
         
         _orangeColor = RGB(236.0, 105.0, 41.0);
         _grayColor = [UIColor colorWithWhite:100.0/255.0 alpha:0.2];
+        _greenColor = RGB(85.0, 186.0, 66.0);
     }
     return self;
 }
@@ -52,6 +54,10 @@
 
 + (UIColor *)grayColor {
     return [[WCAPPGlobal defaultAppGlobal] grayColor];
+}
+
++ (UIColor *)greenColor {
+    return [[WCAPPGlobal defaultAppGlobal] greenColor];
 }
 
 @end

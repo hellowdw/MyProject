@@ -22,5 +22,6 @@
  */
 + (UIColor *)orangeColor;
 + (UIColor *)grayColor;
++ (UIColor *)greenColor;
 
 @end
