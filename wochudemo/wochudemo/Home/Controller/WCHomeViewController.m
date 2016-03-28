@@ -12,6 +12,7 @@
 #import "WCHomeTitleView.h"
 #import "WCGoodsActivityProgram1Cell.h"
 #import "WCGoodsActivityProgram2Cell.h"
+#import "WCGoodsActivityProgram3Cell.h"
 #import <MJRefresh/MJRefresh.h>
 #import "WCGoodsCell.h"
 #import "WCGoodsActs.h"
@@ -19,6 +20,7 @@
 static NSString *__goodsCellIdentifier = @"WCGoodsCell";
 static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
 static NSString *__program2CellIdentifier = @"WCGoodsActivityProgram2Cell";
+static NSString *__program3CellIdentifier = @"WCGoodsActivityProgram3Cell";
 
 
 
@@ -143,7 +145,11 @@ static NSString *__program2CellIdentifier = @"WCGoodsActivityProgram2Cell";
             [WCGoodsActivityProgram2Cell renderCell:cell tableView:tableView indexPath:indesPath element:acts];
         }
             break;
-            
+        case  WCHomeCellTypeThreeImageView: {
+            cell = [tableView dequeueReusableCellWithIdentifier:__program3CellIdentifier];
+            [WCGoodsActivityProgram3Cell renderCell:cell tableView:tableView indexPath:indesPath element:acts];
+        }
+            break;
         default:
             break;
     }
@@ -166,7 +172,23 @@ static NSString *__program2CellIdentifier = @"WCGoodsActivityProgram2Cell";
 }
 
 - (CGFloat)_actsCellWithTableView:(UITableView *)tableView heightForRowIndexPath:(NSIndexPath *)indexPath {
-    return [WCGoodsActivityProgram1Cell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+    WCGoodsActs *acts = [_mViewModel elementForIndexPath:indexPath];
+    switch (acts.templateType) {
+        case 1:
+            return [WCGoodsActivityProgram1Cell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+            break;
+        case 2:
+            return [WCGoodsActivityProgram2Cell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+            break;
+        case 3:
+            return [WCGoodsActivityProgram3Cell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+            break;
+        default:
+            return 44;
+            break;
+    }
+    
+    return 44;
 }
 
 #pragma mark - Action

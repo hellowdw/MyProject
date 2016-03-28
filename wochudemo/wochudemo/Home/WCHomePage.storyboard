@@ -148,8 +148,48 @@
                                     </connections>
                                 </view>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsActivityProgram3Cell" rowHeight="150" id="ZnV-lP-qdQ" customClass="WCGoodsActivityProgram3Cell">
+                                        <rect key="frame" x="0.0" y="412" width="600" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZnV-lP-qdQ" id="Bet-fE-riw">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eQ8-Wx-Eyg">
+                                                    <rect key="frame" x="5" y="2" width="293" height="145.5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oEc-55-nUh">
+                                                    <rect key="frame" x="302" y="2" width="293" height="71"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYH-dQ-Yng">
+                                                    <rect key="frame" x="302" y="77" width="293" height="70.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eQ8-Wx-Eyg" firstAttribute="top" secondItem="Bet-fE-riw" secondAttribute="top" constant="2" id="1nA-jl-KDj"/>
+                                                <constraint firstAttribute="trailing" secondItem="jYH-dQ-Yng" secondAttribute="trailing" constant="5" id="2XC-eJ-rL4"/>
+                                                <constraint firstItem="jYH-dQ-Yng" firstAttribute="leading" secondItem="eQ8-Wx-Eyg" secondAttribute="trailing" constant="4" id="649-7Z-wjv"/>
+                                                <constraint firstItem="jYH-dQ-Yng" firstAttribute="bottom" secondItem="eQ8-Wx-Eyg" secondAttribute="bottom" id="6l5-jq-Kim"/>
+                                                <constraint firstItem="jYH-dQ-Yng" firstAttribute="trailing" secondItem="oEc-55-nUh" secondAttribute="trailing" id="9OW-As-vWq"/>
+                                                <constraint firstItem="oEc-55-nUh" firstAttribute="top" secondItem="eQ8-Wx-Eyg" secondAttribute="top" id="AIh-Vc-3cm"/>
+                                                <constraint firstItem="jYH-dQ-Yng" firstAttribute="leading" secondItem="oEc-55-nUh" secondAttribute="leading" id="Bcs-Tt-3gQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="jYH-dQ-Yng" secondAttribute="trailing" constant="5" id="NRO-1T-UvZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="eQ8-Wx-Eyg" secondAttribute="bottom" constant="2" id="QMz-OD-Eue"/>
+                                                <constraint firstItem="jYH-dQ-Yng" firstAttribute="height" secondItem="oEc-55-nUh" secondAttribute="height" id="QtP-89-4kZ"/>
+                                                <constraint firstItem="jYH-dQ-Yng" firstAttribute="top" secondItem="oEc-55-nUh" secondAttribute="bottom" constant="4" id="Zoe-xa-Jso"/>
+                                                <constraint firstItem="jYH-dQ-Yng" firstAttribute="width" secondItem="eQ8-Wx-Eyg" secondAttribute="width" id="nf6-Yn-mAQ"/>
+                                                <constraint firstItem="oEc-55-nUh" firstAttribute="width" secondItem="eQ8-Wx-Eyg" secondAttribute="width" id="sRX-c7-hgN"/>
+                                                <constraint firstItem="eQ8-Wx-Eyg" firstAttribute="leading" secondItem="Bet-fE-riw" secondAttribute="leading" constant="5" id="wUC-mQ-zFF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftImageView" destination="eQ8-Wx-Eyg" id="8l2-Ge-SgB"/>
+                                            <outlet property="rightBottomImageView" destination="jYH-dQ-Yng" id="MMx-Ut-3ST"/>
+                                            <outlet property="rightTopImageView" destination="oEc-55-nUh" id="Q0b-a1-EUN"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsActivityProgram2Cell" rowHeight="100" id="n4X-PM-geM" customClass="WCGoodsActivityProgram2Cell">
-                                        <rect key="frame" x="0.0" y="412" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="562" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n4X-PM-geM" id="4jF-1v-UKx">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
@@ -186,7 +226,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsActivityProgram1Cell" rowHeight="101" id="Yu1-Xu-PVf" customClass="WCGoodsActivityProgram1Cell">
-                                        <rect key="frame" x="0.0" y="512" width="600" height="101"/>
+                                        <rect key="frame" x="0.0" y="662" width="600" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yu1-Xu-PVf" id="RTW-Th-tGC">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="100.5"/>
@@ -209,7 +249,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WCGoodsCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="WCGoodsCell" rowHeight="165" id="hMR-FH-6oO" customClass="WCGoodsCell">
-                                        <rect key="frame" x="0.0" y="613" width="600" height="165"/>
+                                        <rect key="frame" x="0.0" y="763" width="600" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hMR-FH-6oO" id="QBb-MQ-9Ba">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="164.5"/>
