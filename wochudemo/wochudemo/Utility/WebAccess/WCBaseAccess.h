@@ -7,6 +7,7 @@
 //
 
 #import "WCBaseWebService.h"
+#import <MJExtension/MJExtension.h>
 
 typedef void(^WCCommonAction)(NSArray *array,NSError *error);
 

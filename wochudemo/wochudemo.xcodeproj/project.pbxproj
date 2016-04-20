@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D47082D1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D47082C1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m */; };
 		1D60328B1C8D52BC002E1665 /* WCBaseGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D60328A1C8D52BC002E1665 /* WCBaseGoods.m */; };
 		1D60328E1C8D74AE002E1665 /* WCVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D60328D1C8D74AE002E1665 /* WCVersion.m */; };
 		1D6207551C7182000069A2E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6207541C7182000069A2E5 /* main.m */; };
@@ -23,6 +24,14 @@
 		1D6207A31C71C7520069A2E5 /* WCHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6207A21C71C7520069A2E5 /* WCHomeViewModel.m */; };
 		1D6207A71C71CF700069A2E5 /* WCHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6207A61C71CF700069A2E5 /* WCHomeHeaderView.m */; };
 		1D6207AA1C71CF8F0069A2E5 /* WCHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6207A91C71CF8F0069A2E5 /* WCHomeTitleView.m */; };
+		1D6A0E681CC623EF007E8F6F /* PKYStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E671CC623EF007E8F6F /* PKYStepper.m */; };
+		1D6A0E6B1CC71B5E007E8F6F /* WCGoodsAssessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E6A1CC71B5E007E8F6F /* WCGoodsAssessCell.m */; };
+		1D6A0E6E1CC71BBA007E8F6F /* WCGoodsContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E6D1CC71BBA007E8F6F /* WCGoodsContentCell.m */; };
+		1D6A0E711CC71C15007E8F6F /* WCGoodsRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E701CC71C15007E8F6F /* WCGoodsRecommendCell.m */; };
+		1D6A0E741CC76B60007E8F6F /* WCGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E731CC76B60007E8F6F /* WCGoods.m */; };
+		1D6A0E771CC774BC007E8F6F /* WCGoodsRelevant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E761CC774BC007E8F6F /* WCGoodsRelevant.m */; };
+		1D6A0E7A1CC775CC007E8F6F /* WCGoodsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E791CC775CC007E8F6F /* WCGoodsDetailViewModel.m */; };
+		1D6A0E7D1CC7792C007E8F6F /* WCGoodsAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E7C1CC7792C007E8F6F /* WCGoodsAccess.m */; };
 		1D9D6B481C966E7900DD1C27 /* WCAPPGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D6B471C966E7900DD1C27 /* WCAPPGlobal.m */; };
 		1D9D6B4B1C96A6EA00DD1C27 /* WCGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D6B4A1C96A6EA00DD1C27 /* WCGoodsCell.m */; };
 		1D9D6B4F1C96AC4D00DD1C27 /* WCGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D6B4E1C96AC4D00DD1C27 /* WCGoodsView.m */; };
@@ -49,8 +58,12 @@
 		1DA8C53A1C86E7D00031CB2F /* WCActivityAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C5391C86E7D00031CB2F /* WCActivityAccess.m */; };
 		1DA8C5C91C8D21370031CB2F /* WCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8C5C81C8D21370031CB2F /* WCBaseModel.m */; };
 		1DCCB5011C744C8200579501 /* WCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCB5001C744C8200579501 /* WCBaseTableViewCell.m */; };
+		1DD32BD21CC61EB900E1191D /* WCSetpper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD32BD11CC61EB900E1191D /* WCSetpper.m */; };
 		1DDF6B001C8D2F2800733FD8 /* WCAdvertising.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF6AFF1C8D2F2800733FD8 /* WCAdvertising.m */; };
 		1DECB3D51CA0F5E200AA8291 /* WCGoodsActivityProgram2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DECB3D41CA0F5E200AA8291 /* WCGoodsActivityProgram2Cell.m */; };
+		1DF2930B1CC4BE4D0053B63B /* WCGoodsDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2930A1CC4BE4D0053B63B /* WCGoodsDetailBottomView.m */; };
+		1DF2930E1CC4C8F70053B63B /* WCGoodsDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2930D1CC4C8F70053B63B /* WCGoodsDetailInfoView.m */; };
+		1DF293111CC4D05A0053B63B /* WCGoodsDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF293101CC4D05A0053B63B /* WCGoodsDetailHeaderView.m */; };
 		1DF7E75F1C97B0C800A18C78 /* UIView+Ellipse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7E75E1C97B0C800A18C78 /* UIView+Ellipse.m */; };
 		1DF7E7661C9F8F9F00A18C78 /* WCGoodsAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7E7651C9F8F9F00A18C78 /* WCGoodsAction.m */; };
 		1DF7E7691C9F8FC900A18C78 /* WCGoodsActs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF7E7681C9F8FC900A18C78 /* WCGoodsActs.m */; };
@@ -76,6 +89,8 @@
 
 /* Begin PBXFileReference section */
 		1D12DCB01C7307A500B88480 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		1D47082B1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsDetailViewController.h; sourceTree = "<group>"; };
+		1D47082C1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailViewController.m; sourceTree = "<group>"; };
 		1D6032891C8D52BC002E1665 /* WCBaseGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseGoods.h; sourceTree = "<group>"; };
 		1D60328A1C8D52BC002E1665 /* WCBaseGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseGoods.m; sourceTree = "<group>"; };
 		1D60328C1C8D74AE002E1665 /* WCVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCVersion.h; sourceTree = "<group>"; };
@@ -108,6 +123,22 @@
 		1D6207A61C71CF700069A2E5 /* WCHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHomeHeaderView.m; sourceTree = "<group>"; };
 		1D6207A81C71CF8F0069A2E5 /* WCHomeTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCHomeTitleView.h; sourceTree = "<group>"; };
 		1D6207A91C71CF8F0069A2E5 /* WCHomeTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHomeTitleView.m; sourceTree = "<group>"; };
+		1D6A0E661CC623EF007E8F6F /* PKYStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKYStepper.h; sourceTree = "<group>"; };
+		1D6A0E671CC623EF007E8F6F /* PKYStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKYStepper.m; sourceTree = "<group>"; };
+		1D6A0E691CC71B5E007E8F6F /* WCGoodsAssessCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsAssessCell.h; sourceTree = "<group>"; };
+		1D6A0E6A1CC71B5E007E8F6F /* WCGoodsAssessCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsAssessCell.m; sourceTree = "<group>"; };
+		1D6A0E6C1CC71BBA007E8F6F /* WCGoodsContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsContentCell.h; sourceTree = "<group>"; };
+		1D6A0E6D1CC71BBA007E8F6F /* WCGoodsContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsContentCell.m; sourceTree = "<group>"; };
+		1D6A0E6F1CC71C15007E8F6F /* WCGoodsRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsRecommendCell.h; sourceTree = "<group>"; };
+		1D6A0E701CC71C15007E8F6F /* WCGoodsRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsRecommendCell.m; sourceTree = "<group>"; };
+		1D6A0E721CC76B60007E8F6F /* WCGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCGoods.h; path = ../../../Base/Model/WCGoods.h; sourceTree = "<group>"; };
+		1D6A0E731CC76B60007E8F6F /* WCGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCGoods.m; path = ../../../Base/Model/WCGoods.m; sourceTree = "<group>"; };
+		1D6A0E751CC774BC007E8F6F /* WCGoodsRelevant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsRelevant.h; sourceTree = "<group>"; };
+		1D6A0E761CC774BC007E8F6F /* WCGoodsRelevant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsRelevant.m; sourceTree = "<group>"; };
+		1D6A0E781CC775CC007E8F6F /* WCGoodsDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsDetailViewModel.h; sourceTree = "<group>"; };
+		1D6A0E791CC775CC007E8F6F /* WCGoodsDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailViewModel.m; sourceTree = "<group>"; };
+		1D6A0E7B1CC7792C007E8F6F /* WCGoodsAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsAccess.h; sourceTree = "<group>"; };
+		1D6A0E7C1CC7792C007E8F6F /* WCGoodsAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsAccess.m; sourceTree = "<group>"; };
 		1D9D6B461C966E7900DD1C27 /* WCAPPGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAPPGlobal.h; sourceTree = "<group>"; };
 		1D9D6B471C966E7900DD1C27 /* WCAPPGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAPPGlobal.m; sourceTree = "<group>"; };
 		1D9D6B491C96A6EA00DD1C27 /* WCGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsCell.h; sourceTree = "<group>"; };
@@ -160,10 +191,18 @@
 		1DCCB4FF1C744C8200579501 /* WCBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseTableViewCell.h; sourceTree = "<group>"; };
 		1DCCB5001C744C8200579501 /* WCBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseTableViewCell.m; sourceTree = "<group>"; };
 		1DCCB5021C7454D000579501 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1DD32BD01CC61EB900E1191D /* WCSetpper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSetpper.h; sourceTree = "<group>"; };
+		1DD32BD11CC61EB900E1191D /* WCSetpper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSetpper.m; sourceTree = "<group>"; };
 		1DDF6AFE1C8D2F2800733FD8 /* WCAdvertising.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAdvertising.h; sourceTree = "<group>"; };
 		1DDF6AFF1C8D2F2800733FD8 /* WCAdvertising.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAdvertising.m; sourceTree = "<group>"; };
 		1DECB3D31CA0F5E200AA8291 /* WCGoodsActivityProgram2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsActivityProgram2Cell.h; sourceTree = "<group>"; };
 		1DECB3D41CA0F5E200AA8291 /* WCGoodsActivityProgram2Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsActivityProgram2Cell.m; sourceTree = "<group>"; };
+		1DF293091CC4BE4D0053B63B /* WCGoodsDetailBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsDetailBottomView.h; sourceTree = "<group>"; };
+		1DF2930A1CC4BE4D0053B63B /* WCGoodsDetailBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailBottomView.m; sourceTree = "<group>"; };
+		1DF2930C1CC4C8F70053B63B /* WCGoodsDetailInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsDetailInfoView.h; sourceTree = "<group>"; };
+		1DF2930D1CC4C8F70053B63B /* WCGoodsDetailInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailInfoView.m; sourceTree = "<group>"; };
+		1DF2930F1CC4D05A0053B63B /* WCGoodsDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsDetailHeaderView.h; sourceTree = "<group>"; };
+		1DF293101CC4D05A0053B63B /* WCGoodsDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailHeaderView.m; sourceTree = "<group>"; };
 		1DF7E75D1C97B0C800A18C78 /* UIView+Ellipse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Ellipse.h"; sourceTree = "<group>"; };
 		1DF7E75E1C97B0C800A18C78 /* UIView+Ellipse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ellipse.m"; sourceTree = "<group>"; };
 		1DF7E7641C9F8F9F00A18C78 /* WCGoodsAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsAction.h; sourceTree = "<group>"; };
@@ -254,6 +293,7 @@
 				1D62078D1C71B43D0069A2E5 /* Base */,
 				1D6207861C71B1220069A2E5 /* Home(首页) */,
 				1DA2C97D1CA9631F008D6831 /* Filter */,
+				1D6A0E641CC62369007E8F6F /* 3rd */,
 				1D6207531C7182000069A2E5 /* Supporting Files */,
 			);
 			path = wochudemo;
@@ -305,6 +345,8 @@
 			children = (
 				1DA2C98C1CA9666D008D6831 /* WCHomeViewController.h */,
 				1DA2C98D1CA9666D008D6831 /* WCHomeViewController.m */,
+				1D47082B1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.h */,
+				1D47082C1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +364,8 @@
 		1D6207891C71B1A10069A2E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DF293081CC4BD710053B63B /* GoodsDetailView */,
+				1DF293071CC4BD4C0053B63B /* GoodsDetailCell */,
 				1D9D6B4C1C96AB6000DD1C27 /* CommonView */,
 				1DA8C5021C7475910031CB2F /* HomeCell */,
 				1D6207A41C71CF510069A2E5 /* HomeView */,
@@ -334,6 +378,8 @@
 			children = (
 				1D6207A11C71C7520069A2E5 /* WCHomeViewModel.h */,
 				1D6207A21C71C7520069A2E5 /* WCHomeViewModel.m */,
+				1D6A0E781CC775CC007E8F6F /* WCGoodsDetailViewModel.h */,
+				1D6A0E791CC775CC007E8F6F /* WCGoodsDetailViewModel.m */,
 			);
 			path = ViewMoel;
 			sourceTree = "<group>";
@@ -410,6 +456,23 @@
 				1DA8C51A1C7595B50031CB2F /* WCHomeNewsView.m */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		1D6A0E641CC62369007E8F6F /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A0E651CC623EF007E8F6F /* PKYStepper */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		1D6A0E651CC623EF007E8F6F /* PKYStepper */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A0E661CC623EF007E8F6F /* PKYStepper.h */,
+				1D6A0E671CC623EF007E8F6F /* PKYStepper.m */,
+			);
+			path = PKYStepper;
 			sourceTree = "<group>";
 		};
 		1D9D6B451C966E4700DD1C27 /* APPGlobal */ = {
@@ -502,6 +565,8 @@
 		1DA8C50F1C7561E80031CB2F /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				1DD32BD01CC61EB900E1191D /* WCSetpper.h */,
+				1DD32BD11CC61EB900E1191D /* WCSetpper.m */,
 				1DA8C5101C75623A0031CB2F /* WCSeparateView.h */,
 				1DA8C5111C75623A0031CB2F /* WCSeparateView.m */,
 				1DA8C51C1C75A4CF0031CB2F /* WCButton.h */,
@@ -542,6 +607,8 @@
 				1DA8C52F1C8566F30031CB2F /* WCBaseAccess.m */,
 				1DA8C5291C854A210031CB2F /* WCBaseWebService.h */,
 				1DA8C52A1C854A210031CB2F /* WCBaseWebService.m */,
+				1D6A0E7B1CC7792C007E8F6F /* WCGoodsAccess.h */,
+				1D6A0E7C1CC7792C007E8F6F /* WCGoodsAccess.m */,
 			);
 			path = WebAccess;
 			sourceTree = "<group>";
@@ -566,9 +633,39 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		1DF293071CC4BD4C0053B63B /* GoodsDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A0E691CC71B5E007E8F6F /* WCGoodsAssessCell.h */,
+				1D6A0E6A1CC71B5E007E8F6F /* WCGoodsAssessCell.m */,
+				1D6A0E6C1CC71BBA007E8F6F /* WCGoodsContentCell.h */,
+				1D6A0E6D1CC71BBA007E8F6F /* WCGoodsContentCell.m */,
+				1D6A0E6F1CC71C15007E8F6F /* WCGoodsRecommendCell.h */,
+				1D6A0E701CC71C15007E8F6F /* WCGoodsRecommendCell.m */,
+			);
+			path = GoodsDetailCell;
+			sourceTree = "<group>";
+		};
+		1DF293081CC4BD710053B63B /* GoodsDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				1DF293091CC4BE4D0053B63B /* WCGoodsDetailBottomView.h */,
+				1DF2930A1CC4BE4D0053B63B /* WCGoodsDetailBottomView.m */,
+				1DF2930C1CC4C8F70053B63B /* WCGoodsDetailInfoView.h */,
+				1DF2930D1CC4C8F70053B63B /* WCGoodsDetailInfoView.m */,
+				1DF2930F1CC4D05A0053B63B /* WCGoodsDetailHeaderView.h */,
+				1DF293101CC4D05A0053B63B /* WCGoodsDetailHeaderView.m */,
+			);
+			path = GoodsDetailView;
+			sourceTree = "<group>";
+		};
 		1DF7E7631C9F8F9F00A18C78 /* WCGoodsActs */ = {
 			isa = PBXGroup;
 			children = (
+				1D6A0E751CC774BC007E8F6F /* WCGoodsRelevant.h */,
+				1D6A0E761CC774BC007E8F6F /* WCGoodsRelevant.m */,
+				1D6A0E721CC76B60007E8F6F /* WCGoods.h */,
+				1D6A0E731CC76B60007E8F6F /* WCGoods.m */,
 				1DF7E7641C9F8F9F00A18C78 /* WCGoodsAction.h */,
 				1DF7E7651C9F8F9F00A18C78 /* WCGoodsAction.m */,
 				1DF7E7671C9F8FC900A18C78 /* WCGoodsActs.h */,
@@ -788,31 +885,44 @@
 				1D60328E1C8D74AE002E1665 /* WCVersion.m in Sources */,
 				1DA8C5C91C8D21370031CB2F /* WCBaseModel.m in Sources */,
 				1DA2C9781CA9624D008D6831 /* WCViewControllerLoader.m in Sources */,
+				1D6A0E7D1CC7792C007E8F6F /* WCGoodsAccess.m in Sources */,
 				1D6207A01C71C6B50069A2E5 /* WCBaseViewModel.m in Sources */,
 				1DA2C9791CA9624D008D6831 /* WCViewControllerManager.m in Sources */,
+				1D47082D1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m in Sources */,
+				1DF293111CC4D05A0053B63B /* WCGoodsDetailHeaderView.m in Sources */,
 				1D6207A31C71C7520069A2E5 /* WCHomeViewModel.m in Sources */,
 				1D62079D1C71C67C0069A2E5 /* WCObject.m in Sources */,
 				1DECB3D51CA0F5E200AA8291 /* WCGoodsActivityProgram2Cell.m in Sources */,
+				1DF2930E1CC4C8F70053B63B /* WCGoodsDetailInfoView.m in Sources */,
 				1D9D6B4F1C96AC4D00DD1C27 /* WCGoodsView.m in Sources */,
+				1D6A0E741CC76B60007E8F6F /* WCGoods.m in Sources */,
 				1DA8C5121C75623A0031CB2F /* WCSeparateView.m in Sources */,
+				1D6A0E6B1CC71B5E007E8F6F /* WCGoodsAssessCell.m in Sources */,
 				1DF7E7661C9F8F9F00A18C78 /* WCGoodsAction.m in Sources */,
 				1DA8C53A1C86E7D00031CB2F /* WCActivityAccess.m in Sources */,
 				1DA8C5221C76F0C00031CB2F /* WCImageView.m in Sources */,
 				1DA2C9881CA96601008D6831 /* WCGoodsActivityProgram3Cell.m in Sources */,
 				1D9D6B4B1C96A6EA00DD1C27 /* WCGoodsCell.m in Sources */,
+				1D6A0E7A1CC775CC007E8F6F /* WCGoodsDetailViewModel.m in Sources */,
 				1D6207AA1C71CF8F0069A2E5 /* WCHomeTitleView.m in Sources */,
 				1DA8C5151C7595270031CB2F /* WCHomeActionView.m in Sources */,
+				1DD32BD21CC61EB900E1191D /* WCSetpper.m in Sources */,
+				1D6A0E711CC71C15007E8F6F /* WCGoodsRecommendCell.m in Sources */,
 				1D9D6B481C966E7900DD1C27 /* WCAPPGlobal.m in Sources */,
 				1D6207581C7182000069A2E5 /* AppDelegate.m in Sources */,
+				1DF2930B1CC4BE4D0053B63B /* WCGoodsDetailBottomView.m in Sources */,
 				1DA8C51B1C7595B50031CB2F /* WCHomeNewsView.m in Sources */,
 				1DA2C98E1CA9666D008D6831 /* WCHomeViewController.m in Sources */,
 				1DA8C51E1C75A4CF0031CB2F /* WCButton.m in Sources */,
 				1DDF6B001C8D2F2800733FD8 /* WCAdvertising.m in Sources */,
+				1D6A0E681CC623EF007E8F6F /* PKYStepper.m in Sources */,
+				1D6A0E6E1CC71BBA007E8F6F /* WCGoodsContentCell.m in Sources */,
 				1D60328B1C8D52BC002E1665 /* WCBaseGoods.m in Sources */,
 				1DF7E7691C9F8FC900A18C78 /* WCGoodsActs.m in Sources */,
 				1D6207551C7182000069A2E5 /* main.m in Sources */,
 				1DF7E75F1C97B0C800A18C78 /* UIView+Ellipse.m in Sources */,
 				1DA8C5251C7AA2510031CB2F /* WCThread.m in Sources */,
+				1D6A0E771CC774BC007E8F6F /* WCGoodsRelevant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
