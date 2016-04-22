@@ -22,4 +22,9 @@ typedef void(^WCHomeLayoutAction)(NSArray *ads,NSArray *goods,NSError *error);
  */
 + (void)getGoodsActsAction:(WCCommonAction)action;
 
+/**
+ *  详情的广告栏
+ */
++ (void)getGoodsAdvertiseWithGoodsGuid:(NSString *)goodsGuid action:(WCCommonAction)action;
+
 @end

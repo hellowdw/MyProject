@@ -111,6 +111,7 @@ static NSString *__program3CellIdentifier = @"WCGoodsActivityProgram3Cell";
         case WCHomeCellTypeBombGoods:{
             WCGoodsCell * cell = [tableView dequeueReusableCellWithIdentifier:__goodsCellIdentifier forIndexPath:indexPath];
             [WCGoodsCell renderCell:cell tableView:tableView indexPath:indexPath element:_mViewModel.goods];
+//            [cell se]
             return cell;
         }
             break;

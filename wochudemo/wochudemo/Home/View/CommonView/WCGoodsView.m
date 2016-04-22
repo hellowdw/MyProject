@@ -15,8 +15,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;          /*价格*/
 @property (weak, nonatomic) IBOutlet UILabel *oldPriceLabel;       /*老价格 */
 
-@property (strong, nonatomic)WCBaseGoods *goods;
+@property (strong, nonatomic) WCBaseGoods *goods;
 @property (assign, nonatomic,getter=isHiddenOldPrice) BOOL hiddenOldPrice;
+@property (copy, nonatomic) void(^action)(WCBaseGoods *goods);
+
 
 @end
 
@@ -60,7 +62,15 @@
 }
 
 - (void)_pressedGoodsView:(UITapGestureRecognizer *)tap {
-    
+    if (_action) {
+        _action(_goods);
+    }
+}
+
+- (void)setPressedGoodsViewActon:(void (^)(WCBaseGoods *))action {
+    if (action) {
+        _action = [action copy];
+    }
 }
 
 /*

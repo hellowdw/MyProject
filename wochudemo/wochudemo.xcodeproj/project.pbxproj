@@ -32,6 +32,7 @@
 		1D6A0E771CC774BC007E8F6F /* WCGoodsRelevant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E761CC774BC007E8F6F /* WCGoodsRelevant.m */; };
 		1D6A0E7A1CC775CC007E8F6F /* WCGoodsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E791CC775CC007E8F6F /* WCGoodsDetailViewModel.m */; };
 		1D6A0E7D1CC7792C007E8F6F /* WCGoodsAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E7C1CC7792C007E8F6F /* WCGoodsAccess.m */; };
+		1D6A0E801CCA054D007E8F6F /* WCGoodsDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E7F1CCA054D007E8F6F /* WCGoodsDetailWebView.m */; };
 		1D9D6B481C966E7900DD1C27 /* WCAPPGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D6B471C966E7900DD1C27 /* WCAPPGlobal.m */; };
 		1D9D6B4B1C96A6EA00DD1C27 /* WCGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D6B4A1C96A6EA00DD1C27 /* WCGoodsCell.m */; };
 		1D9D6B4F1C96AC4D00DD1C27 /* WCGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D6B4E1C96AC4D00DD1C27 /* WCGoodsView.m */; };
@@ -139,6 +140,8 @@
 		1D6A0E791CC775CC007E8F6F /* WCGoodsDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailViewModel.m; sourceTree = "<group>"; };
 		1D6A0E7B1CC7792C007E8F6F /* WCGoodsAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsAccess.h; sourceTree = "<group>"; };
 		1D6A0E7C1CC7792C007E8F6F /* WCGoodsAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsAccess.m; sourceTree = "<group>"; };
+		1D6A0E7E1CCA054D007E8F6F /* WCGoodsDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsDetailWebView.h; sourceTree = "<group>"; };
+		1D6A0E7F1CCA054D007E8F6F /* WCGoodsDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailWebView.m; sourceTree = "<group>"; };
 		1D9D6B461C966E7900DD1C27 /* WCAPPGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAPPGlobal.h; sourceTree = "<group>"; };
 		1D9D6B471C966E7900DD1C27 /* WCAPPGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAPPGlobal.m; sourceTree = "<group>"; };
 		1D9D6B491C96A6EA00DD1C27 /* WCGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsCell.h; sourceTree = "<group>"; };
@@ -655,6 +658,8 @@
 				1DF2930D1CC4C8F70053B63B /* WCGoodsDetailInfoView.m */,
 				1DF2930F1CC4D05A0053B63B /* WCGoodsDetailHeaderView.h */,
 				1DF293101CC4D05A0053B63B /* WCGoodsDetailHeaderView.m */,
+				1D6A0E7E1CCA054D007E8F6F /* WCGoodsDetailWebView.h */,
+				1D6A0E7F1CCA054D007E8F6F /* WCGoodsDetailWebView.m */,
 			);
 			path = GoodsDetailView;
 			sourceTree = "<group>";
@@ -871,6 +876,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6A0E801CCA054D007E8F6F /* WCGoodsDetailWebView.m in Sources */,
 				1DA2C97C1CA96284008D6831 /* WCBaseTabBarController.m in Sources */,
 				1DA8C5301C8566F30031CB2F /* WCBaseAccess.m in Sources */,
 				1DA8C50E1C7479C10031CB2F /* WCGoodsActivityProgram1Cell.m in Sources */,

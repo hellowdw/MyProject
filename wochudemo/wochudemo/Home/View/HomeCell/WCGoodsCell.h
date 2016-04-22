@@ -7,7 +7,13 @@
 //
 
 #import "WCBaseTableViewCell.h"
+#import "WCBaseGoods.h"
 
 @interface WCGoodsCell : WCBaseTableViewCell
+
+/**
+ *  点击进商品详情
+ */
+- (void)setGoodsViewAction:(void(^)(WCBaseGoods *goods))action;
 
 @end

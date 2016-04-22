@@ -420,7 +420,7 @@
                         <outlet property="mHomeTitleView" destination="G5a-5y-cff" id="Xzt-fl-RZi"/>
                         <outlet property="mTableView" destination="ABB-hb-23t" id="BaJ-Xo-gP8"/>
                         <outlet property="mViewModel" destination="COe-OR-OZh" id="Z0c-r5-lCk"/>
-                        <segue destination="TeZ-7t-OXR" kind="show" id="77f-eb-rJ7"/>
+                        <segue destination="TeZ-7t-OXR" kind="show" identifier="segueGoodsDetailViewController" id="77f-eb-rJ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baO-q0-eeN" userLabel="First Responder" sceneMemberID="firstResponder"/>

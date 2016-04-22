@@ -27,6 +27,19 @@
     }];
 }
 
++ (void)getGoodsRelecentWithGoodsGuid:(NSString *)guid action:(WCGoodsRelevantAction)action {
+    NSDictionary *dict = @{@"goodsGuid" : guid};
+    NSDictionary *parameters = [self assembleParameterWithKey:@"parameters" parameters:dict];
+    [self GET:[self assembleURLString:@"goods/getGoodsRelevantList"] parameters:parameters action:^(NSURLSessionDataTask *task, id responeObject, NSError *error) {
+        if (error) {
+            return action (nil,error);
+        } else {
+            WCGoodsRelevant *goodsRelevant = [WCGoodsRelevant mj_objectWithKeyValues:responeObject[@"data"]];
+            return action(goodsRelevant,nil);
+        }
+    }];
+}
+
 @end
 
 

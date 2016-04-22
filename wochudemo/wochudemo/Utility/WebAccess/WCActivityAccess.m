@@ -53,4 +53,17 @@
     }];
 }
 
++ (void)getGoodsAdvertiseWithGoodsGuid:(NSString *)goodsGuid action:(WCCommonAction)action {
+    NSDictionary *dict = @{@"goodsGuid" : goodsGuid};
+    NSDictionary *parameters = [self assembleParameterWithKey:@"parameters" parameters:dict];
+    [self GET:[self assembleURLString:@"goods/imgLoopList"] parameters:parameters action:^(NSURLSessionDataTask *task, id responeObject, NSError *error) {
+        if (error) {
+            return action(nil, error);
+        } else {
+            NSArray *ads = [WCAdvertising mj_objectArrayWithKeyValuesArray:responeObject[@"data"]];
+            return action(ads, error);
+        }
+    }];
+}
+
 @end

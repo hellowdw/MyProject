@@ -13,6 +13,14 @@
 
 + (instancetype)goodsView;
 
+/**
+ * 渲染goodsView
+ */
 - (void)renderWithGoods:(WCBaseGoods *)goods;
+
+/**
+ *  点击商品进详情
+ */
+- (void)setPressedGoodsViewActon:(void(^)(WCBaseGoods *goods))action;
 
 @end

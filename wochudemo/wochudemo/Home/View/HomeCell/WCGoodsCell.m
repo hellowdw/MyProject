@@ -96,5 +96,6 @@
     _goodsScrollView.contentSize = CGSizeMake(goodsArray.count * W + (goodsArray.count + 1) * WCGoodsMargin, 0);
 }
 
+#pragma mark - 添加事件
 
 @end
