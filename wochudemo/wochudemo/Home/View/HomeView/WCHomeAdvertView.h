@@ -11,6 +11,7 @@
 @interface WCHomeAdvertView : UIView
 
 - (void)setAdvertisings:(NSArray *)ads;
+- (void)setIsGoodsDetail:(BOOL)isGoodsDetail;
 
 - (void)startAnimation;
 - (void)stopAnimation;

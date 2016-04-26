@@ -19,8 +19,6 @@
 @interface WCGoodsCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
-
 @property (weak, nonatomic) IBOutlet UIScrollView *goodsScrollView;
 
 @property (strong, nonatomic) NSMutableArray *goodsViewArray;
@@ -97,5 +95,14 @@
 }
 
 #pragma mark - 添加事件
+
+- (void)setGoodsViewAction:(void (^)(WCBaseGoods *))action {
+    if (action) {
+        for (WCGoodsView *goodsView in _goodsViewArray) {
+            [goodsView setPressedGoodsViewActon:action];
+        }
+    }
+}
+
 
 @end

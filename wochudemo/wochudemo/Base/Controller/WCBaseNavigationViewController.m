@@ -14,14 +14,34 @@
 
 @implementation WCBaseNavigationViewController
 
++ (void)load {
+    [super load];
+    [self _setup];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+}
+
++ (void)_setup {
+    UINavigationBar *nav = [UINavigationBar appearance];
+    nav.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    if (self.viewControllers.count) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:YES];
+    
 }
 
 /*

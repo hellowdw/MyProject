@@ -17,6 +17,8 @@
 #import "WCThread.h"
 #import "WCAPPGlobal.h"
 #import "UIView+Ellipse.h"
+#import "RSProgressHUD.h"
+#import "NSError+WC.h"
 
 
 

@@ -8,8 +8,8 @@
 
 #import "WCBaseViewModel.h"
 #import "WCGoodsAccess.h"
+#import "WCGoods.h"
 
-@class WCGoods;
 @interface WCGoodsDetailViewModel : WCBaseViewModel
 
 - (NSInteger)numberOfItemsOrRowsInSction:(NSInteger)section;
@@ -22,7 +22,7 @@
 /**
  * 刷新商品
  */
-- (void)refreshWithGoodsGuid:(NSString *)goodsGuid action:(WCDoneAction)action;
+- (void)refreshWithGoodsGuid:(NSString *)goodsGuid action:(void(^)(WCGoods *goods,NSError *error))action;
 
 
 @end

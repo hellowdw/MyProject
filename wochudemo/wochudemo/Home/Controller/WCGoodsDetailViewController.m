@@ -14,6 +14,8 @@
 #define WCGoodsDetailBottomView_Height 49
 #define WCGoodsDetailHeaderView_Height WCScreenWidth + 105
 
+static NSString *__cellIdentifier = @"testCell";
+
 @interface WCGoodsDetailViewController ()<UITableViewDataSource,UITableViewDelegate, UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet WCGoodsDetailViewModel *mViewModel;
 @property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
@@ -33,15 +35,28 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self _setNavigationWithImage:[UIImage new] translucent:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self _setNavigationWithImage:nil translucent:NO];
+}
+
 #pragma mark - setup
 
 - (void)setup {
-    [self _setNavigation];
     [self _setTableView];
+    [self _loadData];
 }
 
 - (void)_setTableView {
     _mScrollView .scrollEnabled = NO;
+    _mTableView.backgroundView = nil;
+    _mTableView.backgroundColor = [WCAPPGlobal backgroundColor];
+    self.view.backgroundColor = [WCAPPGlobal backgroundColor];
     _mTableView.frame = CGRectMake(0, 0, WCScreenWidth, WCScreenHeight - WCGoodsDetailBottomView_Height);
     _goodsDetailWebView = [[WCGoodsDetailWebView alloc] initWithFrame:CGRectMake(0, WCScreenHeight, WCScreenWidth, WCScreenHeight)];
     _mTableView.tableHeaderView = _headerView;
@@ -50,10 +65,31 @@
     [_mScrollView addSubview:_goodsDetailWebView];
 }
 
-- (void)_setNavigation {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    self.navigationController.navigationBar.translucent = YES;
+- (void)_setNavigationWithImage:(UIImage *)image translucent:(BOOL)isYes {
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:image];
+    self.navigationController.navigationBar.translucent = isYes;
+}
+
+- (void)_loadData {
+    __weak typeof(self) weakSelf = self;
+    [weakSelf.mViewModel refreshWithGoodsGuid:_goodsGuid action:^(WCGoods *goods, NSError *error) {
+        run(^{
+            if (error) {
+                [RSProgressHUD showErrorWithStatus:error.errorDescription];
+            } else {
+                [weakSelf.headerView renderGoodsInfoViewWith:goods];
+                [weakSelf.mTableView reloadData];
+            }
+        });
+    }];
+    
+   [weakSelf.mViewModel refreshAdvertiseWithGoodsGuid:_goodsGuid action:^(NSArray *array, NSError *error) {
+       [weakSelf.headerView renderAdvertWithImageUrlArr:array];
+   }];
+    
+    
+    
 }
 
 
@@ -66,9 +102,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_mViewModel numberOfItemsOrRowsInSction:section];
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return  50;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:__cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:__cellIdentifier];
+    }
+    cell.backgroundColor = [UIColor redColor];
+    return cell;
 }
 
 #pragma mark - Web
@@ -82,6 +126,7 @@
 
 //返回
 - (IBAction)pressedGoBackLeftButtonItem:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //进入购物车

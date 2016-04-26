@@ -47,23 +47,23 @@
     return [WCActivityAccess getGoodsAdvertiseWithGoodsGuid:goodsGuid action:action];
 }
 
-- (void)refreshWithGoodsGuid:(NSString *)goodsGuid action:(WCDoneAction)action {
+- (void)refreshWithGoodsGuid:(NSString *)goodsGuid action:(void (^)(WCGoods *, NSError *))action {
     __weak typeof(self) weakSelf = self;
     [WCGoodsAccess getGoodsDetailWithGoodsGuid:goodsGuid action:^(WCGoods *goods, NSError *error) {
         if (error) {
-            return action(error);
+            return action(nil,error);
         } else {
             weakSelf.goods = goods;
-            return action(nil);
+            return action(goods,nil);
         }
     }];
     
     [WCGoodsAccess getGoodsRelecentWithGoodsGuid:goodsGuid action:^(WCGoodsRelevant *goodsReleVant, NSError *error) {
         if (error) {
-            return action(error);
+            return action(nil,error);
         } else {
             weakSelf.goodsRelevant = goodsReleVant;
-            return action(nil); //这地方造成了两次刷新，数据应该写成一个接口
+            return action(weakSelf.goods,nil); //这地方造成了两次刷新，数据应该写成一个接口
         }
     }];
 }

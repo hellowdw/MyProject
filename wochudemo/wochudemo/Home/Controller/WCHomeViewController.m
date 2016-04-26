@@ -16,6 +16,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import "WCGoodsCell.h"
 #import "WCGoodsActs.h"
+#import "WCGoodsDetailViewController.h"
 
 static NSString *__goodsCellIdentifier = @"WCGoodsCell";
 static NSString *__program1CellIdentifier = @"WCGoodsActivityProgram1Cell";
@@ -30,6 +31,8 @@ static NSString *__program3CellIdentifier = @"WCGoodsActivityProgram3Cell";
 @property (weak, nonatomic) IBOutlet WCHomeTitleView *mHomeTitleView;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (strong, nonatomic) IBOutlet WCHomeViewModel *mViewModel;
+
+@property (copy, nonatomic) NSString *tempGoodsGuid;
 
 @end
 
@@ -111,7 +114,10 @@ static NSString *__program3CellIdentifier = @"WCGoodsActivityProgram3Cell";
         case WCHomeCellTypeBombGoods:{
             WCGoodsCell * cell = [tableView dequeueReusableCellWithIdentifier:__goodsCellIdentifier forIndexPath:indexPath];
             [WCGoodsCell renderCell:cell tableView:tableView indexPath:indexPath element:_mViewModel.goods];
-//            [cell se]
+            [cell setGoodsViewAction:^(WCBaseGoods *goods) {
+                weakSelf.tempGoodsGuid = goods.goodsGuid;
+                [weakSelf performSegueWithIdentifier:@"segueGoodsDetailViewController" sender:self];
+            }];
             return cell;
         }
             break;
@@ -195,17 +201,16 @@ static NSString *__program3CellIdentifier = @"WCGoodsActivityProgram3Cell";
 }
 
 
-/*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     if ([segue.identifier isEqualToString:@"segueGoodsDetailViewController"]) {
+         WCGoodsDetailViewController *goodsDetailVC = segue.destinationViewController;
+         [goodsDetailVC setTargetGoodsGuid:_tempGoodsGuid];
+     }
+}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-- (IBAction)test:(id)sender {
-    NSLog(@"test");
-}
+
 
 @end

@@ -23,5 +23,6 @@
 + (UIColor *)orangeColor;
 + (UIColor *)grayColor;
 + (UIColor *)greenColor;
++ (UIColor *)backgroundColor;
 
 @end

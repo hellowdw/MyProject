@@ -11,12 +11,23 @@
 #import "WCGoodsDetailInfoView.h"
 @interface WCGoodsDetailHeaderView ()
 @property (weak, nonatomic) IBOutlet WCHomeAdvertView *advertView;
-
 @property (weak, nonatomic) IBOutlet WCGoodsDetailInfoView *goodsDetailInfoView;
+
+@property (strong, nonatomic) WCGoods *goods;
 
 @end
 
 @implementation WCGoodsDetailHeaderView
+
+- (void)renderGoodsInfoViewWith:(WCGoods *)goods {
+    _goods = goods;
+    [_goodsDetailInfoView renderGoodsInfoViewWithGoods:goods];
+}
+
+- (void)renderAdvertWithImageUrlArr:(NSArray *)imageUrlArr {
+    [_advertView setAdvertisings:imageUrlArr];
+    [_advertView setIsGoodsDetail:YES];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

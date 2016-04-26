@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSTimeInterval interval;
 @property (assign, nonatomic) NSInteger currentPage;
+@property (assign, nonatomic) BOOL isGoodsDetail;
 
 @end
 
@@ -84,7 +85,9 @@
     if (picUrls.count < 2) {
         return;
     }
-    [self _startTimer];
+    if (!_isGoodsDetail) {
+        [self _startTimer];
+    }
 }
 
 - (void)_imageView:(WCImageView *)imageView loadImage:(id)image {
@@ -154,8 +157,9 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _pageControl.currentPage = _scrollView.contentOffset.x / _scrollView.frame.size.width - 1;
     });
-    [self _startTimer];
-}
+    if (!_isGoodsDetail) {
+        [self _startTimer];
+    }}
 
 
 #pragma mark - setup
@@ -190,6 +194,7 @@
 
 - (void)_setup {
     _interval = 3.0;
+    _isGoodsDetail = NO;
     [_imageViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     _imageViews = [NSMutableArray array];
     
@@ -215,6 +220,10 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self _setupFrame];
+}
+
+- (void)setIsGoodsDetail:(BOOL)isGoodsDetail {
+    _isGoodsDetail = isGoodsDetail;
 }
 
 @end

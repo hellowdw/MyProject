@@ -11,5 +11,4 @@
 @interface WCGoodsDetailViewController : WCBaseViewController
 
 - (void)setTargetGoodsGuid:(NSString *)goodsGuid;
-
 @end

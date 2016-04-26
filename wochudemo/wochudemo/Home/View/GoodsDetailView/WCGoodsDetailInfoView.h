@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "WCGoods.h"
 
 @interface WCGoodsDetailInfoView : UIView
+
+- (void)renderGoodsInfoViewWithGoods:(WCGoods *)goods;
 
 @end

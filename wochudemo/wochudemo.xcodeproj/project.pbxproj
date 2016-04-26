@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D12C8221CCDE977006A946A /* RSProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D12C81F1CCDE977006A946A /* RSProgressHUD.bundle */; };
+		1D12C8231CCDE977006A946A /* RSProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D12C8211CCDE977006A946A /* RSProgressHUD.m */; };
 		1D47082D1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D47082C1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m */; };
 		1D60328B1C8D52BC002E1665 /* WCBaseGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D60328A1C8D52BC002E1665 /* WCBaseGoods.m */; };
 		1D60328E1C8D74AE002E1665 /* WCVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D60328D1C8D74AE002E1665 /* WCVersion.m */; };
@@ -89,6 +91,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D12C81F1CCDE977006A946A /* RSProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RSProgressHUD.bundle; sourceTree = "<group>"; };
+		1D12C8201CCDE977006A946A /* RSProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSProgressHUD.h; sourceTree = "<group>"; };
+		1D12C8211CCDE977006A946A /* RSProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSProgressHUD.m; sourceTree = "<group>"; };
 		1D12DCB01C7307A500B88480 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		1D47082B1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsDetailViewController.h; sourceTree = "<group>"; };
 		1D47082C1CC0D62D00B8F0E5 /* WCGoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsDetailViewController.m; sourceTree = "<group>"; };
@@ -249,6 +254,16 @@
 				525322F63DA1AAE77EC41959 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D12C81E1CCDE977006A946A /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				1D12C81F1CCDE977006A946A /* RSProgressHUD.bundle */,
+				1D12C8201CCDE977006A946A /* RSProgressHUD.h */,
+				1D12C8211CCDE977006A946A /* RSProgressHUD.m */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		1D12DCAF1C73077600B88480 /* Headers */ = {
@@ -464,6 +479,7 @@
 		1D6A0E641CC62369007E8F6F /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				1D12C81E1CCDE977006A946A /* HUD */,
 				1D6A0E651CC623EF007E8F6F /* PKYStepper */,
 			);
 			path = 3rd;
@@ -799,6 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D6207631C7182000069A2E5 /* LaunchScreen.storyboard in Resources */,
+				1D12C8221CCDE977006A946A /* RSProgressHUD.bundle in Resources */,
 				1D9D6B511C96AC7A00DD1C27 /* WCGoodsView.xib in Resources */,
 				1D6207601C7182000069A2E5 /* Assets.xcassets in Resources */,
 				1DA2C9851CA96353008D6831 /* Main.storyboard in Resources */,
@@ -903,6 +920,7 @@
 				1D9D6B4F1C96AC4D00DD1C27 /* WCGoodsView.m in Sources */,
 				1D6A0E741CC76B60007E8F6F /* WCGoods.m in Sources */,
 				1DA8C5121C75623A0031CB2F /* WCSeparateView.m in Sources */,
+				1D12C8231CCDE977006A946A /* RSProgressHUD.m in Sources */,
 				1D6A0E6B1CC71B5E007E8F6F /* WCGoodsAssessCell.m in Sources */,
 				1DF7E7661C9F8F9F00A18C78 /* WCGoodsAction.m in Sources */,
 				1DA8C53A1C86E7D00031CB2F /* WCActivityAccess.m in Sources */,
