@@ -118,6 +118,7 @@ static NSString *__program3CellIdentifier = @"WCGoodsActivityProgram3Cell";
                 weakSelf.tempGoodsGuid = goods.goodsGuid;
                 [weakSelf performSegueWithIdentifier:@"segueGoodsDetailViewController" sender:self];
             }];
+            [cell setTitleLabelWithString:@"爆款商品"];
             return cell;
         }
             break;

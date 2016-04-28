@@ -29,7 +29,6 @@
 		1D6A0E681CC623EF007E8F6F /* PKYStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E671CC623EF007E8F6F /* PKYStepper.m */; };
 		1D6A0E6B1CC71B5E007E8F6F /* WCGoodsAssessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E6A1CC71B5E007E8F6F /* WCGoodsAssessCell.m */; };
 		1D6A0E6E1CC71BBA007E8F6F /* WCGoodsContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E6D1CC71BBA007E8F6F /* WCGoodsContentCell.m */; };
-		1D6A0E711CC71C15007E8F6F /* WCGoodsRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E701CC71C15007E8F6F /* WCGoodsRecommendCell.m */; };
 		1D6A0E741CC76B60007E8F6F /* WCGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E731CC76B60007E8F6F /* WCGoods.m */; };
 		1D6A0E771CC774BC007E8F6F /* WCGoodsRelevant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E761CC774BC007E8F6F /* WCGoodsRelevant.m */; };
 		1D6A0E7A1CC775CC007E8F6F /* WCGoodsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A0E791CC775CC007E8F6F /* WCGoodsDetailViewModel.m */; };
@@ -135,8 +134,6 @@
 		1D6A0E6A1CC71B5E007E8F6F /* WCGoodsAssessCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsAssessCell.m; sourceTree = "<group>"; };
 		1D6A0E6C1CC71BBA007E8F6F /* WCGoodsContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsContentCell.h; sourceTree = "<group>"; };
 		1D6A0E6D1CC71BBA007E8F6F /* WCGoodsContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsContentCell.m; sourceTree = "<group>"; };
-		1D6A0E6F1CC71C15007E8F6F /* WCGoodsRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsRecommendCell.h; sourceTree = "<group>"; };
-		1D6A0E701CC71C15007E8F6F /* WCGoodsRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCGoodsRecommendCell.m; sourceTree = "<group>"; };
 		1D6A0E721CC76B60007E8F6F /* WCGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCGoods.h; path = ../../../Base/Model/WCGoods.h; sourceTree = "<group>"; };
 		1D6A0E731CC76B60007E8F6F /* WCGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCGoods.m; path = ../../../Base/Model/WCGoods.m; sourceTree = "<group>"; };
 		1D6A0E751CC774BC007E8F6F /* WCGoodsRelevant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCGoodsRelevant.h; sourceTree = "<group>"; };
@@ -659,8 +656,6 @@
 				1D6A0E6A1CC71B5E007E8F6F /* WCGoodsAssessCell.m */,
 				1D6A0E6C1CC71BBA007E8F6F /* WCGoodsContentCell.h */,
 				1D6A0E6D1CC71BBA007E8F6F /* WCGoodsContentCell.m */,
-				1D6A0E6F1CC71C15007E8F6F /* WCGoodsRecommendCell.h */,
-				1D6A0E701CC71C15007E8F6F /* WCGoodsRecommendCell.m */,
 			);
 			path = GoodsDetailCell;
 			sourceTree = "<group>";
@@ -931,7 +926,6 @@
 				1D6207AA1C71CF8F0069A2E5 /* WCHomeTitleView.m in Sources */,
 				1DA8C5151C7595270031CB2F /* WCHomeActionView.m in Sources */,
 				1DD32BD21CC61EB900E1191D /* WCSetpper.m in Sources */,
-				1D6A0E711CC71C15007E8F6F /* WCGoodsRecommendCell.m in Sources */,
 				1D9D6B481C966E7900DD1C27 /* WCAPPGlobal.m in Sources */,
 				1D6207581C7182000069A2E5 /* AppDelegate.m in Sources */,
 				1DF2930B1CC4BE4D0053B63B /* WCGoodsDetailBottomView.m in Sources */,

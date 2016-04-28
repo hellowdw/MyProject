@@ -18,6 +18,14 @@
 
 @implementation WCGoodsAssessCell
 
++ (instancetype)renderCell:(WCGoodsAssessCell *)cell tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath element:(id)element {
+    return cell;
+}
+
++ (CGFloat)cellHeightWithCell:(WCBaseTableViewCell *)cell tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath element:(id)element {
+    return 44;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

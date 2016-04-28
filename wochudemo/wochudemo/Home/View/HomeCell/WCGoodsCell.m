@@ -29,25 +29,37 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        _goodsViewArray = [NSMutableArray array];
+        [self _setup];
         //这个时候cell才被加载，cell的子视图还没有加载
         //_titleLabel.text = @"爆款商品";
     }
     return self;
 }
 
-- (void)awakeFromNib {
-    //这个时候cell的子视图才被加载
-    _titleLabel.text = @"爆款商品";
-    
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self _setup];
+    }
+    return self;
 }
 
+- (void)_setup {
+    _goodsViewArray = [NSMutableArray array];
+}
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setBackgroundColor:[UIColor lightGrayColor]];
+    //这个时候cell的子视图才被加载
+}
+
+- (void)setTitleLabelWithString:(NSString *)title {
+    _titleLabel.text = title;
+}
 
 + (instancetype)renderCell:(WCGoodsCell *)cell tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath element:(id)element{
     cell.element = element;
     NSArray *goodsArray = (NSArray *)element;
-    
     for (NSInteger idx = 0; idx < goodsArray.count; idx ++) {
         WCBaseGoods *goods = goodsArray[idx];
         WCGoodsView *goodsView = nil;
@@ -69,8 +81,6 @@
             goodsView.hidden = YES;
         }
     }
-    
-    
     return cell;
 }
 
@@ -90,6 +100,7 @@
         WCGoodsView *goodsView = _goodsViewArray[idx];
         CGFloat X = (idx + 1) * WCGoodsMargin + idx * W;
         goodsView.frame = CGRectMake(X, 0, W, W + WCGoodsViewLabelHeight);
+        NSLog(@"%@",NSStringFromCGRect(goodsView.frame));
     }
     _goodsScrollView.contentSize = CGSizeMake(goodsArray.count * W + (goodsArray.count + 1) * WCGoodsMargin, 0);
 }

@@ -24,7 +24,7 @@
         case WCGoodsDetailCellTypeGoodsAssess:
             return nil;
             break;
-        case WCGoodsDetailCellTypeGoodsInfo:
+        case WCGoodsDetailCellTypeGoodsContent:
             return _goods;
             break;
         case WCGoodsDetailCellTypeGuessYouLike:
@@ -40,7 +40,7 @@
 }
 
 - (NSInteger)numberOfItemsOrRowsInSction:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (void)refreshAdvertiseWithGoodsGuid:(NSString *)goodsGuid action:(WCCommonAction)action {

@@ -16,4 +16,6 @@
  */
 - (void)setGoodsViewAction:(void(^)(WCBaseGoods *goods))action;
 
+- (void)setTitleLabelWithString:(NSString *)title;
+
 @end

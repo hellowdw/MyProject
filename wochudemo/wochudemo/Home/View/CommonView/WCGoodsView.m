@@ -8,8 +8,12 @@
 
 #import "WCGoodsView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "WCSeparateView.h"
 
 @interface WCGoodsView ()
+
+@property (weak, nonatomic) IBOutlet WCSeparateView *separateView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *thumbImageView;  /*缩略图*/
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;           /*名称*/
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;          /*价格*/
@@ -73,12 +77,11 @@
     }
 }
 
-/*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
+    [super drawRect:rect];
+    [self setBackgroundColor:[UIColor redColor]];
 }
-*/
 
 @end

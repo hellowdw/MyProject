@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger,WCHomeCellType) {
 
 typedef NS_ENUM(NSInteger,WCGoodsDetailCellType) {
     WCGoodsDetailCellTypeGoodsAssess = 0,      //第一种cell是商品评价
-    WCGoodsDetailCellTypeGoodsInfo,            //第二种cell是商品详情的描述
+    WCGoodsDetailCellTypeGoodsContent,            //第二种cell是商品详情的描述
     WCGoodsDetailCellTypeGuessYouLike,         //第三种cell是商品相关（猜你喜欢）
     WCGoodsDetailCellTypeOtherFriendChoose     //第三种cell是商品相关（其他好友喜欢）
 };

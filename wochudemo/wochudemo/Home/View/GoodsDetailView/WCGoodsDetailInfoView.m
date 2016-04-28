@@ -53,7 +53,7 @@
             return;
         }
         UIImageView *imageView = _imageViewArray[idx];
-        NSString *imageName = [NSString stringWithFormat:@"%@",goods.goodsAttributeImg[idx]];
+        NSString *imageName = [NSString stringWithFormat:@"home_goods_free_%@",goods.goodsAttributeImg[idx]];
         imageView.image = [UIImage imageNamed:imageName];
         imageView.hidden = NO;
     }

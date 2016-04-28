@@ -10,11 +10,18 @@
 #import "WCGoodsDetailHeaderView.h"
 #import "WCGoodsDetailViewModel.h"
 #import "WCGoodsDetailWebView.h"
+#import "WCBaseTableViewCell.h"
+#import "WCGoodsAssessCell.h"
+#import "WCGoodsContentCell.h"
+#import "WCGoodsCell.h"
+
 
 #define WCGoodsDetailBottomView_Height 49
 #define WCGoodsDetailHeaderView_Height WCScreenWidth + 105
 
-static NSString *__cellIdentifier = @"testCell";
+static NSString *__goodsAssessCellIdentifier = @"WCGoodsAssessCell";
+static NSString *__goodsContentCellIdentifier = @"WCGoodsContentCell";
+static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
 
 @interface WCGoodsDetailViewController ()<UITableViewDataSource,UITableViewDelegate, UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet WCGoodsDetailViewModel *mViewModel;
@@ -40,6 +47,10 @@ static NSString *__cellIdentifier = @"testCell";
     [self _setNavigationWithImage:[UIImage new] translucent:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self _setNavigationWithImage:nil translucent:NO];
@@ -53,14 +64,15 @@ static NSString *__cellIdentifier = @"testCell";
 }
 
 - (void)_setTableView {
-    _mScrollView .scrollEnabled = NO;
+    _mScrollView.pagingEnabled = YES;
+    _mScrollView.scrollEnabled = NO;
     _mTableView.backgroundView = nil;
     _mTableView.backgroundColor = [WCAPPGlobal backgroundColor];
     self.view.backgroundColor = [WCAPPGlobal backgroundColor];
     _mTableView.frame = CGRectMake(0, 0, WCScreenWidth, WCScreenHeight - WCGoodsDetailBottomView_Height);
     _goodsDetailWebView = [[WCGoodsDetailWebView alloc] initWithFrame:CGRectMake(0, WCScreenHeight, WCScreenWidth, WCScreenHeight)];
+    _mTableView.tableHeaderView.frame = CGRectMake(0, 0, WCScreenWidth, WCGoodsDetailHeaderView_Height);
     _mTableView.tableHeaderView = _headerView;
-    [_headerView setFrame:CGRectMake(0, 0, WCScreenWidth, WCGoodsDetailHeaderView_Height)];
     [_mScrollView addSubview:_mTableView];
     [_mScrollView addSubview:_goodsDetailWebView];
 }
@@ -87,9 +99,6 @@ static NSString *__cellIdentifier = @"testCell";
    [weakSelf.mViewModel refreshAdvertiseWithGoodsGuid:_goodsGuid action:^(NSArray *array, NSError *error) {
        [weakSelf.headerView renderAdvertWithImageUrlArr:array];
    }];
-    
-    
-    
 }
 
 
@@ -103,15 +112,59 @@ static NSString *__cellIdentifier = @"testCell";
     return [_mViewModel numberOfItemsOrRowsInSction:section];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  50;
+    switch (indexPath.row) {
+        case WCGoodsDetailCellTypeGoodsAssess: {
+            return [WCGoodsAssessCell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+        }
+            break;
+        case WCGoodsDetailCellTypeGoodsContent: {
+            return [WCGoodsContentCell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+        }
+            break;
+        case WCGoodsDetailCellTypeGuessYouLike:
+        case WCGoodsDetailCellTypeOtherFriendChoose: {
+            return [WCGoodsCell cellHeightWithCell:nil tableView:tableView indexPath:indexPath element:nil];
+        }
+            break;
+        default:
+            return 44;
+            break;
+    }
+    return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:__cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:__cellIdentifier];
+    WCBaseTableViewCell *cell = nil;
+    switch (indexPath.row) {
+        case WCGoodsDetailCellTypeGoodsAssess: {
+            WCGoodsAssessCell *assessCell = [tableView dequeueReusableCellWithIdentifier:__goodsAssessCellIdentifier];
+            [WCGoodsAssessCell renderCell:assessCell tableView:tableView indexPath:indexPath element:nil];
+            assessCell.backgroundColor = [UIColor redColor];
+            cell = assessCell;
+        }
+            break;
+        case WCGoodsDetailCellTypeGoodsContent: {
+            WCGoodsContentCell *contentCell = [tableView dequeueReusableCellWithIdentifier:__goodsContentCellIdentifier];
+            [WCGoodsContentCell renderCell:contentCell tableView:tableView indexPath:indexPath element:[_mViewModel elementForIndexPath:indexPath]];
+            cell = contentCell;
+        }
+            break;
+        case WCGoodsDetailCellTypeOtherFriendChoose:
+        case WCGoodsDetailCellTypeGuessYouLike: {
+            WCGoodsCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:__goodsCellIdentifier];
+            [WCGoodsCell renderCell:goodsCell tableView:tableView indexPath:indexPath element:[_mViewModel elementForIndexPath:indexPath]];
+            if (indexPath.row == WCGoodsDetailCellTypeOtherFriendChoose) {
+                [goodsCell setTitleLabelWithString:@"其他厨友的选择"];
+            } else {
+                [goodsCell setTitleLabelWithString:@"猜你喜欢"];
+            }
+            cell = goodsCell;
+        }
+            break;
+        default:
+            return cell;
+            break;
     }
-    cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 
