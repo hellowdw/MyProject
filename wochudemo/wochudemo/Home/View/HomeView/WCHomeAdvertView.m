@@ -62,6 +62,7 @@
     for (NSInteger idx = 0; idx < picUrls.count + 2; idx ++) {
         WCImageView *imageView = [[WCImageView alloc] init];
         imageView.userInteractionEnabled = YES;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_clickImageView:)]];
         if (idx == 0) {
             [self _imageView:imageView loadImage:[picUrls  lastObject]];

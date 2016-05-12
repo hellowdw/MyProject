@@ -17,7 +17,7 @@
 
 
 #define WCGoodsDetailBottomView_Height 49
-#define WCGoodsDetailHeaderView_Height WCScreenWidth + 105
+#define WCGoodsDetailHeaderView_Height WCScreenWidth + 60
 
 static NSString *__goodsAssessCellIdentifier = @"WCGoodsAssessCell";
 static NSString *__goodsContentCellIdentifier = @"WCGoodsContentCell";
@@ -71,8 +71,11 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
     self.view.backgroundColor = [WCAPPGlobal backgroundColor];
     _mTableView.frame = CGRectMake(0, 0, WCScreenWidth, WCScreenHeight - WCGoodsDetailBottomView_Height);
     _goodsDetailWebView = [[WCGoodsDetailWebView alloc] initWithFrame:CGRectMake(0, WCScreenHeight, WCScreenWidth, WCScreenHeight)];
-    _mTableView.tableHeaderView.frame = CGRectMake(0, 0, WCScreenWidth, WCGoodsDetailHeaderView_Height);
-    _mTableView.tableHeaderView = _headerView;
+    _headerView.frame = CGRectMake(0, -WCGoodsDetailHeaderView_Height, WCScreenWidth, WCGoodsDetailHeaderView_Height);
+    
+    _mTableView.contentInset = UIEdgeInsetsMake(WCGoodsDetailHeaderView_Height, 0, 0, 0);
+    [_mTableView addSubview:_headerView];
+    
     [_mScrollView addSubview:_mTableView];
     [_mScrollView addSubview:_goodsDetailWebView];
 }
@@ -106,6 +109,19 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UIScrollViewDelgate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat y = scrollView.contentOffset.y; //如果有导航控制器，这里应该加上导航控制器的高度64
+    if (y< -WCGoodsDetailHeaderView_Height) {
+        CGRect frame = _headerView.frame;
+        frame.origin.y = y;
+        frame.size.height = -y;
+        _headerView.frame = frame;
+    }
+}
+
 #pragma mark - UITableViewDelegate ,UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
