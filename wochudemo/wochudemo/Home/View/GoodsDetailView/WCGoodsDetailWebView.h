@@ -1,13 +1,20 @@
 //
 //  WCGoodsDetailWebView.h
-//  wochudemo
+//  MyKitchen
 //
-//  Created by wochu on 16/4/22.
-//  Copyright © 2016年 wochu_wdw. All rights reserved.
+//  Created by wochu on 15/12/14.
+//  Copyright © 2015年 WoChu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface WCGoodsDetailWebView : UIWebView
+typedef void(^WebViewSizeBlock) (CGFloat webViewContentHeight);
+typedef void (^ScrollToTopRefreshBlock) (void);
+
+@interface WCGoodsDetailWebView : UIWebView<UIWebViewDelegate>
+
+@property (nonatomic,copy)ScrollToTopRefreshBlock topRefreshBlock;
+
+- (void)loadGoodsWebDetailWithElement:(id)element webViewSize:(WebViewSizeBlock)webViewHeight;
 
 @end

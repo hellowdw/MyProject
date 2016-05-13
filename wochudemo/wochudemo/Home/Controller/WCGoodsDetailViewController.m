@@ -14,6 +14,7 @@
 #import "WCGoodsAssessCell.h"
 #import "WCGoodsContentCell.h"
 #import "WCGoodsCell.h"
+#import <MJRefresh/MJRefresh.h>
 
 
 #define WCGoodsDetailBottomView_Height 49
@@ -22,6 +23,7 @@
 static NSString *__goodsAssessCellIdentifier = @"WCGoodsAssessCell";
 static NSString *__goodsContentCellIdentifier = @"WCGoodsContentCell";
 static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
+static NSString *__refreshTitle = @"释放，返回商品详情";
 
 @interface WCGoodsDetailViewController ()<UITableViewDataSource,UITableViewDelegate, UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet WCGoodsDetailViewModel *mViewModel;
@@ -31,6 +33,7 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
 
 @property (strong, nonatomic) WCGoodsDetailWebView *goodsDetailWebView;
 @property (copy, nonatomic) NSString *goodsGuid;
+@property (strong, nonatomic) UIView *tableViewFooter;
 
 @end
 
@@ -60,6 +63,9 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
 
 - (void)setup {
     [self _setTableView];
+    
+    [self _setGoodsDetailWebView];
+    
     [self _loadData];
 }
 
@@ -78,6 +84,19 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
     
     [_mScrollView addSubview:_mTableView];
     [_mScrollView addSubview:_goodsDetailWebView];
+}
+
+- (void)_setGoodsDetailWebView {
+   MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [_mTableView.footer endRefreshing];
+        [_goodsDetailWebView.scrollView.header endRefreshing];
+        [_mTableView setContentOffset:CGPointMake(0, 0) animated:YES];
+        [_mScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }];
+    _goodsDetailWebView.scrollView.header = header;
+    [header setTitle:__refreshTitle forState:MJRefreshStateIdle];
+    [header setTitle:__refreshTitle forState:MJRefreshStatePulling];
+    [header setTitle:__refreshTitle forState:MJRefreshStateRefreshing];
 }
 
 - (void)_setNavigationWithImage:(UIImage *)image translucent:(BOOL)isYes {
@@ -104,6 +123,31 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
    }];
 }
 
+- (UIView *)tableViewFooter {
+    if (_tableViewFooter) {
+        return _tableViewFooter;
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+            _mScrollView.contentOffset = CGPointMake(0, WCScreenHeight);
+            if (!weakSelf.goodsDetailWebView.request) {
+                [weakSelf.goodsDetailWebView loadGoodsWebDetailWithElement:[weakSelf.mViewModel elementForIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]] webViewSize:^(CGFloat webViewContentHeight) {
+                    weakSelf.mScrollView.contentSize = CGSizeMake(WCScreenWidth, weakSelf.mTableView.contentSize.height + webViewContentHeight);
+                }] ;
+            }
+        } completion:^(BOOL finished) {
+            [weakSelf.mTableView.footer endRefreshing];
+        }];
+        
+    }];
+    [footer setTitle:@"继续拖动，查看图文详情" forState:MJRefreshStateIdle];
+    [footer setTitle:@"继续拖动，查看图文详情" forState:MJRefreshStatePulling];
+    [footer setTitle:@"继续拖动，查看图文详情" forState:MJRefreshStateRefreshing];
+//    footer.backgroundColor = [UIColor redColor];
+    return footer;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -114,6 +158,7 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat y = scrollView.contentOffset.y; //如果有导航控制器，这里应该加上导航控制器的高度64
+//    DLog(@"%f",y);
     if (y< -WCGoodsDetailHeaderView_Height) {
         CGRect frame = _headerView.frame;
         frame.origin.y = y;
@@ -147,6 +192,19 @@ static NSString *__goodsCellIdentifier = @"WCGoodsDetailCell";
             break;
     }
     return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.01;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return self.tableViewFooter;
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

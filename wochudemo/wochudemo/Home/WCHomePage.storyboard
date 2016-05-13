@@ -576,13 +576,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBc-RL-okT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="2" sectionHeaderHeight="28" sectionFooterHeight="28" id="J4S-oi-Zfd">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="2" sectionHeaderHeight="18" sectionFooterHeight="18" id="J4S-oi-Zfd">
                     <rect key="frame" x="0.0" y="0.0" width="598" height="2000"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <prototypes>
                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsContentCell" rowHeight="90" id="hr5-TG-IOY" customClass="WCGoodsContentCell">
-                            <rect key="frame" x="0.0" y="28" width="598" height="90"/>
+                            <rect key="frame" x="0.0" y="49.5" width="598" height="90"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hr5-TG-IOY" id="qPu-mZ-7d0">
                                 <rect key="frame" x="0.0" y="0.0" width="598" height="89.5"/>
@@ -739,7 +739,7 @@
                             </connections>
                         </tableViewCell>
                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsAssessCell" rowHeight="100" id="dz6-tf-AkE" customClass="WCGoodsAssessCell">
-                            <rect key="frame" x="0.0" y="118" width="598" height="100"/>
+                            <rect key="frame" x="0.0" y="139.5" width="598" height="100"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dz6-tf-AkE" id="PDd-Jd-M0K">
                                 <rect key="frame" x="0.0" y="0.0" width="598" height="99.5"/>
@@ -785,7 +785,7 @@
                             </connections>
                         </tableViewCell>
                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WCGoodsDetailCell" rowHeight="90" id="7Kc-DI-1dJ" customClass="WCGoodsCell">
-                            <rect key="frame" x="0.0" y="218" width="598" height="90"/>
+                            <rect key="frame" x="0.0" y="239.5" width="598" height="90"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Kc-DI-1dJ" id="4Dh-fz-d5X">
                                 <rect key="frame" x="0.0" y="0.0" width="598" height="89.5"/>

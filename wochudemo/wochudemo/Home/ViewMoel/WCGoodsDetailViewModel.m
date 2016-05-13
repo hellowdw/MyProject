@@ -33,6 +33,9 @@
         case WCGoodsDetailCellTypeOtherFriendChoose:
             return _goodsRelevant.ohterUserChoice;
             break;
+        case WCGoodsDetailDescriptionHtml:
+            return _goods.descriptionDetail;
+            break;
         default:
             return nil;
             break;
@@ -40,7 +43,7 @@
 }
 
 - (NSInteger)numberOfItemsOrRowsInSction:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 - (void)refreshAdvertiseWithGoodsGuid:(NSString *)goodsGuid action:(WCCommonAction)action {
