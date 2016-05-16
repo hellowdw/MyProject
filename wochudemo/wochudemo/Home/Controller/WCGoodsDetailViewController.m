@@ -18,7 +18,7 @@
 
 
 #define WCGoodsDetailBottomView_Height 49
-#define WCGoodsDetailHeaderView_Height WCScreenWidth + 60
+#define WCGoodsDetailHeaderView_Height (WCScreenWidth + 60.00)
 
 static NSString *__goodsAssessCellIdentifier = @"WCGoodsAssessCell";
 static NSString *__goodsContentCellIdentifier = @"WCGoodsContentCell";
@@ -158,11 +158,12 @@ static NSString *__refreshTitle = @"释放，返回商品详情";
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat y = scrollView.contentOffset.y; //如果有导航控制器，这里应该加上导航控制器的高度64
-//    DLog(@"%f",y);
-    if (y< -WCGoodsDetailHeaderView_Height) {
+    if (y < -WCGoodsDetailHeaderView_Height) {
         CGRect frame = _headerView.frame;
         frame.origin.y = y;
         frame.size.height = -y;
+        frame.size.width = frame.size.height/_headerView.frame.size.height*frame.size.width;
+        frame.origin.x = (WCScreenWidth - frame.size.width)*0.5;
         _headerView.frame = frame;
     }
 }
