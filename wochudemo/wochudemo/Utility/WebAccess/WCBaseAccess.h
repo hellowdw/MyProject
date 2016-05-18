@@ -10,6 +10,7 @@
 #import <MJExtension/MJExtension.h>
 
 typedef void(^WCCommonAction)(NSArray *array,NSError *error);
+typedef void(^WCCommonDictAcion)(NSDictionary *dict,NSError *error);
 
 @interface WCBaseAccess : WCBaseWebService
 

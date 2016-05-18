@@ -75,7 +75,6 @@ static NSString *__program3CellIdentifier = @"WCGoodsActivityProgram3Cell";
     self.mTableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self _refresh];
     }];
-    [self.mTableView.header beginRefreshing];
 }
 
 - (void)_refresh {
