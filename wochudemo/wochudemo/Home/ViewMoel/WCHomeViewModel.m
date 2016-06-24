@@ -8,8 +8,49 @@
 
 #import "WCHomeViewModel.h"
 #import "WCActivityAccess.h"
+#import "WCAdvertising.h"
+#import "WCBaseGoods.h"
+#import "FMDB.h"
+
+static FMDatabaseQueue *_queue;
 
 @implementation WCHomeViewModel
+
+- (instancetype)init {
+    if (self = [super init]) {
+        [self _setup];
+    }
+    return self;
+}
+
+#pragma mark - setup
+- (void)_setup {
+   //0.获取沙盒中的数据库文件名
+    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"homeCache.sqlite"];
+    
+    //1.创建队列
+    _queue = [FMDatabaseQueue databaseQueueWithPath:path];
+    
+    //2.创建表
+    [_queue inDatabase:^(FMDatabase *db) {
+        [db executeUpdate:@"create table if not exists t_home (id integer primary key autoincrement,WCAdvertising blob,WCBaseGoods blob);"];
+    }];
+    
+}
+
+- (void)addHomeCacheDataWithAdvertisings:(NSArray *)advertising baseGoods:(NSArray *)baseGoods {
+    for (WCAdvertising *advertis in advertising) {
+        [_queue inDatabase:^(FMDatabase *db) {
+            //1,获取存储的数据
+            NSData *advertisData = [NSKeyedArchiver archivedDataWithRootObject:advertis];
+//            NSData *baseGoodsData = [NSKeyedArchiver archivedDataWithRootObject:<#(nonnull id)#>]
+            
+//            [db executeUpdate:@"insert into t_home (WCAdvertising,WCBaseGoods) values(?,?)",advertisData,];
+        }];
+    }
+}
+
+#pragma mark - ViewModel
 
 - (NSInteger)numberOfItemsOrRowsInSction:(NSInteger)section {
     return self.items.count + 1;

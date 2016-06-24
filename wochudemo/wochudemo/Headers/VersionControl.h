@@ -12,7 +12,7 @@
 
 #ifdef DEBUG
 
-#define WCBaseConnectorAddress @"http://dev1.ikitchen.cc:9093/"
+#define WCBaseConnectorAddress @"http://api4.i-kitchen.cn"
 
 #else 
 
